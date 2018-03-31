@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
-		
+
 	</head>
 
-
 	<body>
-		<form action="insert.php" method="post">
-			<table>
-				<tr>
-					<td>Employee ID: </td>
-					<td align="center"><input type="text" name="emp_id" size="30" /></td>
-				</tr>
-				
-				<tr>
-					<td>Name: </td>
-					<td align="center"><input type="text" name="employee_name" size="30" /></td>
-				</tr>
-				
-				<tr>
-					<td>Department: </td>
-					<td align="center"><input type="text" name="department" size="30" /></td>
-				</tr>
-				
-				<tr>
-					<td colspan="2" align="center"><input type="submit" value="Add To Database"/></td>
-				</tr>
-			</table>
-		</form>
 		
+		<h2>New Purchase</h2>
+		<form action="insertIntoDB.php" method="post">
+			<input type="number" name="purchase_id" placeholder="Purchase ID" required><br>
+			<input type="text" name="date" maxlength="20" placeholder="Date of Purchase" required><br>
+			<input type="text" name="seller" maxlength="20" placeholder="Seller" required><br>
+			<input type="checkbox" name="isAuction" value="soldAtAuction" required> Sold At Auction<br>
+			<input type="text" name="location" placeholder="Location of purchase" maxlength="20" required><br>
+			<input type="hidden" name="insert_into" value="purchase">
+			<input type="submit" value="Add Purchase"><input type="reset">
+		</form>
 		<br>
-		
-		<form action="search.php" method="post">
-			<table>
-				<tr>
-					<td>Employee ID: </td>
-					<td align="center"><input type="text" name="emp_id" size="30" /></td>
-				</tr>
-				
-				<tr>
-					<td colspan="2" align="center"><input type="submit" value="Search"/></td>
-				</tr>
-			</table>
+		<h2>New Vehicle</h2>
+		<form action="insertIntoDB.php" method="post">
+			<input type="text" name="VIN" placeholder="VIN" required><br>
+			<input type="text" name="make" maxlength="20" placeholder="Make" required><br>
+			<input type="text" name="model" maxlength="20" placeholder="Model" required><br>
+			<input type="number" name="year" placeholder="Year" required><br>
+			<input type="text" name="colour" maxlength="15" placeholder="Colour" required><br>
+			<input type="text" name="vehicle_condition" maxlength="20" placeholder="Condition" required><br>
+			<input type="number" name="kilometers" maxlength="7" placeholder="Kilometers" required><br>
+			<input type="text" name="style" maxlength="20" placeholder="Style" required><br>
+			<input type="text" name="interiorColour" maxlength="15" placeholder="Interior Colour" required><br>
+			<input type="hidden" name="insert_into" value="vehicle">
+			<input type="submit" value="Add Vehicle"><input type="reset">
 		</form>
-		
-		<form action="delete.php" method="post">
-			<table>
-				<tr>
-					<td>Employee ID: </td>
-					<td align="center"><input type="text" name="emp_id" size="30" /></td>
-				</tr>
-				
-				<tr>
-					<td colspan="2" align="center"><input type="submit" value="Delete"/></td>
-				</tr>
-			</table>
+		<br>
+		<h2>New Employee</h2>
+		<form action="insertIntoDB.php" method="post">
+			<input type="text" name="empid" maxlength="20" placeholder="ID" required><br>
+			<input type="text" name="employee_name" maxlength="30" placeholder="Name" required><br>
+			<input type="text" name="department" maxlength="30" placeholder="Department" required><br>
+			<input type="text" name="phone_number" maxlength="10" placeholder="Phone Number" required><br>
+			<input type="text" name="street_number" maxlength="30" placeholder="Street Number" required><br>
+			<input type="text" name="city" maxlength="20" placeholder="City" required><br>
+			<input type="text" name="employee_postal_code" maxlength="6" placeholder="Postal Code" required><br>
+			<input type="hidden" name="insert_into" value="employee"><br>
+			<input type="submit" value="Add Employee"><input type="reset">
+		</form>
+		<h2>New Customer</h2>
+		<form action="insertIntoDB.php" method="post">
+			<input type="text" name="drivers_license" maxlength="10" placeholder="Drivers License" required><br>
+			<input type="text" name="customer_name" maxlength="30" placeholder="Name" required><br>
+			<input type="text" name="customer_address" maxlength="30" placeholder="Address" required><br>
+			<input type="text" name="customer_city" maxlength="20" placeholder="City" required><br>
+			<input type="text" name="customer_postal_code" maxlength="6" placeholder="Postal Code" required><br>
+			<input type="text" name="tax_id" maxlength="10" placeholder="Tax ID"><br>
+			<input type="hidden" name="insert_into" value="customer"><br>
+			<input type="submit" value="Add Customer"><input type="reset">
 		</form>
 	</body>
+	
 </html>
