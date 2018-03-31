@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 31, 2018 at 01:46 PM
+-- Generation Time: Mar 31, 2018 at 04:53 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `westsideauto`
 --
-CREATE DATABASE IF NOT EXISTS `westsideauto` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `westsideauto`;
 
 -- --------------------------------------------------------
 
@@ -29,9 +27,12 @@ USE `westsideauto`;
 --
 
 CREATE TABLE `Customer` (
-  `drivers_license_no` int(11) NOT NULL,
+  `drivers_license_no` varchar(25) NOT NULL,
   `TaxID` int(11) NOT NULL,
   `address` varchar(50) NOT NULL,
+  `city` varchar(30) NOT NULL,
+  `province` varchar(25) NOT NULL,
+  `postal_code` varchar(6) NOT NULL,
   `first_name` varchar(25) NOT NULL,
   `last_name` varchar(25) NOT NULL,
   `no_of_late_payments` int(11) NOT NULL,
@@ -46,14 +47,15 @@ CREATE TABLE `Customer` (
 --
 
 CREATE TABLE `Employee` (
-  `empid` int(11) NOT NULL,
-  `dept` int(11) NOT NULL,
+  `empid` varchar(20) NOT NULL,
+  `dept` varchar(40) NOT NULL,
   `first_name` varchar(25) NOT NULL,
   `last_name` varchar(25) NOT NULL,
   `phone_no` varchar(15) NOT NULL,
   `city` varchar(30) NOT NULL,
-  `zip_code` varchar(7) NOT NULL,
-  `state` varchar(25) NOT NULL
+  `postal_code` varchar(6) NOT NULL,
+  `province` varchar(25) NOT NULL,
+  `address` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -63,7 +65,7 @@ CREATE TABLE `Employee` (
 --
 
 CREATE TABLE `Invoice` (
-  `invoice_no` int(11) NOT NULL,
+  `invoice_no` varchar(25) NOT NULL,
   `date_purchased` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -89,7 +91,39 @@ CREATE TABLE `Purchased` (
 
 CREATE TABLE `r_PurchasedRelationship` (
   `purchase_ID` int(11) NOT NULL,
-  `VIN` int(11) NOT NULL
+  `VIN` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `r_SoldBy`
+--
+
+CREATE TABLE `r_SoldBy` (
+  `empid` varchar(20) NOT NULL,
+  `invoice_no` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `r_SoldTo`
+--
+
+CREATE TABLE `r_SoldTo` (
+  `drivers_license_no` varchar(25) NOT NULL,
+  `invoice_no` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `r_VehicleSold`
+--
+
+CREATE TABLE `r_VehicleSold` (
+  `invoice_no` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -100,7 +134,7 @@ CREATE TABLE `r_PurchasedRelationship` (
 
 CREATE TABLE `r_VehicleUnderWarranty` (
   `warranty_name` varchar(50) NOT NULL,
-  `VIN` int(11) NOT NULL
+  `VIN` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -110,7 +144,7 @@ CREATE TABLE `r_VehicleUnderWarranty` (
 --
 
 CREATE TABLE `Vehicle` (
-  `VIN` int(11) NOT NULL,
+  `VIN` varchar(25) NOT NULL,
   `make` varchar(20) NOT NULL,
   `model` varchar(30) NOT NULL,
   `trim` varchar(25) NOT NULL,
@@ -172,6 +206,26 @@ ALTER TABLE `r_PurchasedRelationship`
   ADD UNIQUE KEY `VIN_Purchase_Index` (`VIN`);
 
 --
+-- Indexes for table `r_SoldBy`
+--
+ALTER TABLE `r_SoldBy`
+  ADD UNIQUE KEY `empid` (`empid`),
+  ADD UNIQUE KEY `invoice_no` (`invoice_no`);
+
+--
+-- Indexes for table `r_SoldTo`
+--
+ALTER TABLE `r_SoldTo`
+  ADD UNIQUE KEY `drivers_license_no` (`drivers_license_no`),
+  ADD UNIQUE KEY `invoice_no` (`invoice_no`);
+
+--
+-- Indexes for table `r_VehicleSold`
+--
+ALTER TABLE `r_VehicleSold`
+  ADD UNIQUE KEY `invoice_no` (`invoice_no`);
+
+--
 -- Indexes for table `r_VehicleUnderWarranty`
 --
 ALTER TABLE `r_VehicleUnderWarranty`
@@ -198,14 +252,33 @@ ALTER TABLE `Warranty`
 -- Constraints for table `r_PurchasedRelationship`
 --
 ALTER TABLE `r_PurchasedRelationship`
-  ADD CONSTRAINT `VIN_purchase_constraint` FOREIGN KEY (`VIN`) REFERENCES `Vehicle` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `VIN_constraint` FOREIGN KEY (`VIN`) REFERENCES `Vehicle` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `purchase_ID_constraint` FOREIGN KEY (`purchase_ID`) REFERENCES `Purchased` (`purchase_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `r_SoldBy`
+--
+ALTER TABLE `r_SoldBy`
+  ADD CONSTRAINT `empid_constraint` FOREIGN KEY (`empid`) REFERENCES `Employee` (`empid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `invoice_constraint` FOREIGN KEY (`invoice_no`) REFERENCES `Invoice` (`invoice_no`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `r_SoldTo`
+--
+ALTER TABLE `r_SoldTo`
+  ADD CONSTRAINT `drivers_license_no_constraint` FOREIGN KEY (`drivers_license_no`) REFERENCES `Customer` (`drivers_license_no`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `invoice_no_constraint` FOREIGN KEY (`invoice_no`) REFERENCES `Invoice` (`invoice_no`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `r_VehicleSold`
+--
+ALTER TABLE `r_VehicleSold`
+  ADD CONSTRAINT `invoice_no_const` FOREIGN KEY (`invoice_no`) REFERENCES `Invoice` (`invoice_no`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `r_VehicleUnderWarranty`
 --
 ALTER TABLE `r_VehicleUnderWarranty`
-  ADD CONSTRAINT `VIN_constraint` FOREIGN KEY (`VIN`) REFERENCES `Vehicle` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `warranty_name_constraint` FOREIGN KEY (`warranty_name`) REFERENCES `Warranty` (`warranty_name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
