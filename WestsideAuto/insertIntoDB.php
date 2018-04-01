@@ -26,7 +26,7 @@
 	echo $inputType."<br>";
 	
 	switch($inputType) {
-		case "purchase":
+		case "purchased":
 			$purchase_ID = $_POST['purchase_ID'];
 			$dateOfPurchase = $_POST['date_of_purchase'];
 			$seller = $_POST['seller'];
@@ -36,11 +36,8 @@
 			if($isAuction == 'Yes')
 				$isAuction = 1;
 			else
-				$isAuction = 0;
+				$isAuction = 0; 
 			
-			$sql = "INSERT INTO purchase (purchase_ID, date_of_purchase, seller, isAuction, location) VALUES ($purchase_ID, \"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")";  
-			break;
-		case "vehicle":
 			$VIN = $_POST['VIN'];
 			$make = $_POST['make'];
 			$model = $_POST['model'];
@@ -52,7 +49,11 @@
 			$style = $_POST['style'];
 			$interiorColor = $_POST['interior_color'];
 			
+			$sql = "INSERT INTO purchase (purchase_ID, date_of_purchase, seller, isAuction, location) VALUES ($purchase_ID, \"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")"; 
+			
 			$sql = "INSERT INTO vehicles (VIN, make, model, trim, year, color, current_condition, km, style, interior_color) VALUES (\"$VIN\", \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\")"; 
+			
+			$sql = "INSERT INTO r_purchasedrelationship (purchase_ID, VIN) VALUES (\"$purchase_ID\", $VIN)";
 			break;
 		case "employee":
 			$empid = $_POST['empid'];
@@ -81,13 +82,7 @@
 			$sql = "INSERT INTO customers (drivers_license_no, TaxID, address, first_name, last_name, no_of_late_payments, gender, DOB) VALUES ($drivers_license_no, $tax_id, \"$customer_address\", \"$customer_first_name\", \"$customer_last_name\", $no_of_late_payments, \"$customer_gender\", $customer_DOB)";
 			
 			break;
-		
-		case "purchased":
-			$purchase_ID = _POST['purchase_ID'];
-			$VIN = _POST['VIN'];
-			
-			$sql = "INSERT INTO r_purchasedrelationship (purchase_ID, VIN) VALUES (\"$purchase_ID\", $VIN)";
-			break;
+	
 			
 		case "warranty":
 			$warranty_name = _POST['warranty_name'];
@@ -101,7 +96,7 @@
 			$invoice_no = _POST['invoice_no'];
 			$date_purchased = _POST['date_purchased'];
 			
-			$sql = "INSERT INTO invoice (invoice_no, date_purchased) VALUES (\"$invoice_no\", \"$date_purchased\")"; 
+			$sql = "INSERT INTO invoice (invoice_no, date_purchased) VALUES (\"$invoice_no\", \"$date_purchased\")";
 			
 			break;
 		
