@@ -4,7 +4,7 @@
 	ini_set('display_errors', 'on');
 	$user = 'root';
 	$password = 'root';
-	$db = 'bridge_city';
+	$db = 'westsideAuto';
 	$host = 'localhost';
 	$port = 3307;
 
@@ -28,6 +28,7 @@
 	switch($inputType) {
 		case "purchased":
 			$purchase_ID = $_POST['purchase_ID'];
+
 			$dateOfPurchase = $_POST['date_of_purchase'];
 			$seller = $_POST['seller'];
 			$isAuction = $_POST['isAuction'];
@@ -36,8 +37,10 @@
 			if($isAuction == 'Yes')
 				$isAuction = 1;
 			else
-				$isAuction = 0; 
-			
+				$isAuction = 0;
+
+			//book price
+			//Purchased price?
 			$VIN = $_POST['VIN'];
 			$make = $_POST['make'];
 			$model = $_POST['model'];
@@ -51,9 +54,9 @@
 			
 			$sql = "INSERT INTO purchase (purchase_ID, date_of_purchase, seller, isAuction, location) VALUES ($purchase_ID, \"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")"; 
 			
-			$sql = "INSERT INTO vehicles (VIN, make, model, trim, year, color, current_condition, km, style, interior_color) VALUES (\"$VIN\", \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\")"; 
+			$sql = "INSERT INTO vehicles (VIN, make, model, trim, year, color, current_condition, km, style, interior_color) VALUES ($VIN, \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\")";
 			
-			$sql = "INSERT INTO r_purchasedrelationship (purchase_ID, VIN) VALUES (\"$purchase_ID\", $VIN)";
+			$sql = "INSERT INTO r_PurchasedRelationship (purchase_ID, VIN) VALUES ($purchase_ID, $VIN)";
 			break;
 		case "employee":
 			$empid = $_POST['empid'];
