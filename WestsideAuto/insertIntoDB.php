@@ -4,7 +4,7 @@
 	ini_set('display_errors', 'on');
 	$user = 'root';
 	$password = 'root';
-	$db = 'westsideAuto';
+	$db = 'bridge_city';
 	$host = 'localhost';
 	$port = 3307;
 
@@ -28,7 +28,6 @@
 	switch($inputType) {
 		case "purchased":
 			$purchase_ID = $_POST['purchase_ID'];
-
 			$dateOfPurchase = $_POST['date_of_purchase'];
 			$seller = $_POST['seller'];
 			$isAuction = $_POST['isAuction'];
@@ -37,10 +36,8 @@
 			if($isAuction == 'Yes')
 				$isAuction = 1;
 			else
-				$isAuction = 0;
-
-			//book price
-			//Purchased price?
+				$isAuction = 0; 
+			
 			$VIN = $_POST['VIN'];
 			$make = $_POST['make'];
 			$model = $_POST['model'];
@@ -52,11 +49,29 @@
 			$style = $_POST['style'];
 			$interiorColor = $_POST['interior_color'];
 			
-			$sql = "INSERT INTO purchase (purchase_ID, date_of_purchase, seller, isAuction, location) VALUES ($purchase_ID, \"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")"; 
+			$sql = "INSERT INTO purchased (purchase_ID, date_of_purchase, seller, isAuction, location) VALUES ($purchase_ID, \"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")"; 
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "Failure";
+				exit();
+			}
 			
-			$sql = "INSERT INTO vehicles (VIN, make, model, trim, year, color, current_condition, km, style, interior_color) VALUES ($VIN, \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\")";
+			$sql = "INSERT INTO vehicle (VIN, make, model, trim, year, color, current_condition, km, style, interior_color) VALUES (\"$VIN\", \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\")"; 
+			$result = mysqli_query($link, $sql);
 			
-			$sql = "INSERT INTO r_PurchasedRelationship (purchase_ID, VIN) VALUES ($purchase_ID, $VIN)";
+			if(!$result) {
+				echo "Failure";
+				exit();
+			}
+			
+			$sql = "INSERT INTO r_purchasedrelationship (purchase_ID, VIN) VALUES (\"$purchase_ID\", $VIN)";
+			$result = mysqli_query($link, $sql);
+			
+			if(!$result) {
+				echo "Failure";
+				exit();
+			}
+			
 			break;
 		case "employee":
 			$empid = $_POST['empid'];
@@ -107,9 +122,6 @@
 			echo "Found nothing!";
 			break;
 	}
-	
-	echo $sql."<br>";
-	$result = mysqli_query($link, $sql);
 	
 	if($result) {
 		echo "Success<br>";
