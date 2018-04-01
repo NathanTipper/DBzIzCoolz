@@ -50,13 +50,27 @@
 			$interiorColor = $_POST['interior_color'];
 			
 			$sql = "INSERT INTO purchased (purchase_ID, date_of_purchase, seller, isAuction, location) VALUES ($purchase_ID, \"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")"; 
-			mysqli_query($link, $sql);
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "Failure";
+				exit();
+			}
 			
 			$sql = "INSERT INTO vehicle (VIN, make, model, trim, year, color, current_condition, km, style, interior_color) VALUES (\"$VIN\", \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\")"; 
-			mysqli_query($link, $sql);
+			$result = mysqli_query($link, $sql);
+			
+			if(!$result) {
+				echo "Failure";
+				exit();
+			}
 			
 			$sql = "INSERT INTO r_purchasedrelationship (purchase_ID, VIN) VALUES (\"$purchase_ID\", $VIN)";
-			mysqli_query($link, $sql);
+			$result = mysqli_query($link, $sql);
+			
+			if(!$result) {
+				echo "Failure";
+				exit();
+			}
 			
 			break;
 		case "employee":
@@ -108,9 +122,6 @@
 			echo "Found nothing!";
 			break;
 	}
-	
-	echo $sql."<br>";
-	$result = mysqli_query($link, $sql);
 	
 	if($result) {
 		echo "Success<br>";
