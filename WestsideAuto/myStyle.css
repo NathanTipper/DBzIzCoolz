@@ -1,0 +1,20 @@
+a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+a.btn {
+    border: solid grey 1px;
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px;
+    min-width: 100%;
+    margin-bottom: 20px;
+}
+
+.jumbotron {
+    background-color: rgba(173, 170, 174, 0.95);
+}
