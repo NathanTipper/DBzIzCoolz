@@ -7,7 +7,8 @@ a:hover {
     text-decoration: none;
 }
 
-a.btn {
+.homeOptions {
+    color: black;
     border: solid grey 1px;
     border-radius: 20px;
     padding: 20px 20px 20px 20px;
@@ -17,4 +18,20 @@ a.btn {
 
 .jumbotron {
     background-color: rgba(173, 170, 174, 0.95);
+    border-radius: 0;
+}
+
+.backBtn {
+    width: 5%;
+    margin-left: 30px;
+    margin-top: -30px;
+    min-width: 50px;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.topDiv {
+    margin-bottom: 100px;
 }
