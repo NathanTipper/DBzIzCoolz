@@ -17,3 +17,7 @@ function checkInputs(x) {
         alert('Please fill all required fields');
     }
 }
+
+function backBtn() {
+    history.go(-1);
+}

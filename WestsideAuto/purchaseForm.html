@@ -14,7 +14,7 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="myStyle.css">
+    <link rel="stylesheet" type="text/css" href="style/myStyle.css">
 </head>
 <body>
 <div class="jumbotron">
@@ -116,7 +116,20 @@
                 </div>
                 <div class="col-sm">
                     <label for="style">Style</label>
-                    <input type="text" class="form-control" id="style" name="style" placeholder="Enter style">
+                    <select id="style" name="style" class="form-control">
+                        <option selected>Style</option>
+                        <option>Convertible</option>
+                        <option>Coupe</option>
+                        <option>Hatchback</option>
+                        <option>Minivan</option>
+                        <option>Van</option>
+                        <option>Pickup Truck</option>
+                        <option>Sedan</option>
+                        <option>SUV</option>
+                        <option>Crossover</option>
+                        <option>Wagon</option>
+                        <option>Other</option>
+                    </select>
                 </div>
                 <div class="col-sm">
                     <label for="trim">Trim</label>
@@ -164,30 +177,7 @@
         </div>
     </form>
 </div>
-
-
-<!--<form action="searchDB.php" method="post" id="searchVIN">-->
-    <!--<div class="container">-->
-        <!--<div class="row">-->
-            <!--<div class="col-sm">-->
-                <!--<label for="search_vin">Search</label>-->
-                <!--<input type="text" class="form-control" id="search_vin" name="VIN" placeholder="">-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<input type="hidden" name="search" value="vehicles_on_lot">-->
-    <!--<div class="container" style="padding-top: 30px">-->
-        <!--<div class="row">-->
-            <!--<div class="col-sm">-->
-                <!--&lt;!&ndash;<button class="btn btn-primary" onclick="checkInputs('purchaseInfo')">Submit</button>&ndash;&gt;-->
-                <!--<a class="btn btn-primary" onclick="checkInputs('searchVIN')">Submit</a>-->
-                <!--<button class="btn btn-secondary" type="reset" value="Reset">Reset</button>-->
-                <!--<a href="" class="btn btn-primary"></a>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</form>-->
-<script src="myScripts.js"></script>
+<script src="javascript/myScripts.js"></script>
 </body>
 
 

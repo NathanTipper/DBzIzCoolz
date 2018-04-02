@@ -3,7 +3,7 @@
 	ini_set('display_errors', 'on');
 	$user = 'root';
 	$password = 'root';
-	$db = 'westsideauto';
+	$db = 'westsideAuto';
 	$host = 'localhost';
 	$port = 3307;
 
@@ -58,4 +58,5 @@
 	
 	
 	mysqli_close($link);
+
 ?>

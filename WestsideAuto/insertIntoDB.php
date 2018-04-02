@@ -4,7 +4,7 @@
 	ini_set('display_errors', 'on');
 	$user = 'root';
 	$password = 'root';
-	$db = 'bridge_city';
+	$db = 'westsideAuto';
 	$host = 'localhost';
 	$port = 3307;
 
@@ -130,4 +130,6 @@
 		echo "Failure<br>";
 	
 	mysqli_close($link);
+
+	echo "<script> window.location.href = 'index.html';</script>"
 ?>
