@@ -32,7 +32,7 @@
 			break;
 			
 		case 'vehicles_not_under_warranty':
-			$sql = "SELECT * FROM r_purchasedrelationship WHERE r_purchasedrelationship.VIN NOT IN (SELECT VIN FROM r_vehicleunderwarranty)";
+			$sql = "SELECT VIN, make, model, year FROM r_purchasedrelationship natural join vehicle WHERE r_purchasedrelationship.VIN NOT IN (SELECT VIN FROM r_vehicleunderwarranty)";
 			break;
 			
 		default:
