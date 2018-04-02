@@ -5,7 +5,7 @@
 	$password = 'root';
 	$db = 'westsideAuto';
 	$host = 'localhost';
-	$port = 3307;
+	$port = 3306;
 
 	$link = mysqli_init();
 	$success = mysqli_real_connect(

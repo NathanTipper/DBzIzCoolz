@@ -22,7 +22,7 @@
     <hr class="my-4">
 </div>
 <div id="purchaseFormTop" class="topDiv">
-    <a href="saleVehicleSearch.html"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
+    <a href="saleVehicleSearch.php"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
     <div class="container">
         <div class="row">
             <div class="col-sm">
@@ -35,7 +35,18 @@
             <div class="row">
                 <div class="col-sm">
                     <label for="date">Date</label>
-                    <input type="date" class="form-control" id="date" placeholder="DD/MM/YYYY">
+                    <input type="date" class="form-control" id="date" placeholder="YYYY/DD/MM">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <label for="warranty">Warranty</label>
+                    <select id="warranty" name="warranty" class="form-control">
+                        <option selected>No</option>
+                        <option>Yes</option>
+                    </select>
                 </div>
             </div>
         </div>

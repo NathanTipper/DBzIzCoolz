@@ -17,6 +17,34 @@
     <link rel="stylesheet" type="text/css" href="style/myStyle.css">
 </head>
 <body>
+<?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 'on');
+    $user = 'root';
+    $password = 'root';
+    $db = 'westsideAuto';
+    $host = 'localhost';
+    $port = 3306;
+
+    $link = mysqli_init();
+    $success = mysqli_real_connect(
+       $link, 
+       $host, 
+       $user, 
+       $password, 
+       $db,
+       $port
+    );
+
+    if(!$success) {
+        echo "COULD NOT CONNECT<br>";
+        exit();
+    }
+    
+    $sql = "";
+    $sql = "SELECT * FROM vehicle";
+?>
+
 <div class="jumbotron">
     <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">
@@ -39,11 +67,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <h5>Search vehicle being sold</h5>
+                    <h5>Vehicle Identification Number</h5>
                 </div>
             </div>
         </div>
-        <form action="" id="searchVehicle">
+        <form action="" id="searchVehicle" style="margin-bottom: 30px;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
@@ -57,6 +85,24 @@
                 </div>
             </div>
         </form>
+        <div class="container">
+            <?php 
+                $searchQuery = mysqli_query($link, $sql);
+                $numRow = mysqli_num_rows($searchQuery);
+                $numCol = mysqli_num_fields($searchQuery);
+                while($row = mysqli_fetch_array($searchQuery)) {
+                    echo "<div class=\"row\">";
+                    echo "<div class=\"col-sm-2\"><b>VIN: </b>".$row[0]."</div>";
+                    echo "<div class=\"col-sm-2\"><b>Make: </b>".$row[1]."</div>";
+                    echo "<div class=\"col-sm-2\"><b>Model: </b>".$row[2]."</div>";
+                    echo "<div class=\"col-sm-2\"><b>Trim: </b>".$row[3]."</div>";
+                    echo "<div class=\"col-sm-2\"><b>Year: </b>".$row[4]."</div>";
+                    echo "<div class=\"col-sm-2\"><b>Colour: </b>".$row[5]."</div>";
+                    echo "</div>";
+                    echo "<hr>";        
+                    }
+            ?>
+        </div>
     </div>
 </div>
 <script src="javascript/myScripts.js"></script>
