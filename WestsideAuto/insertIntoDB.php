@@ -1,5 +1,5 @@
 <?php
-	
+	session_start();
 	error_reporting(E_ALL);
 	ini_set('display_errors', 'on');
 	$user = 'root';
@@ -91,6 +91,7 @@
 			$customer_first_name = $_POST['customer_first_name'];
 			$customer_last_name = $_POST['customer_last_name'];
 			$customer_address = $_POST['customer_address'];
+			$customer_province = _$POST['customer_province'];
 			$customer_city = $_POST['customer_city'];
 			$customer_postal_code = $_POST['customer_postal_code'];
 			$tax_id = $_POST['customer_tax_id'];
@@ -98,6 +99,21 @@
 			$customer_DOB = $_POST['customer_DOB'];
 			
 			$sql = "INSERT INTO customers (drivers_license_no, TaxID, address, first_name, last_name, no_of_late_payments, gender, DOB) VALUES ($drivers_license_no, $tax_id, \"$customer_address\", \"$customer_first_name\", \"$customer_last_name\", $no_of_late_payments, \"$customer_gender\", $customer_DOB)";
+			$result = mysqli_query($link, $sql);
+			if($result) {
+					echo "<script>alert('Success')</script>";
+					if(_SESSION['inSale']) {
+						echo "<script> window.location.href = 'saleVehicleSearch.php'</script>";
+					}
+					else {
+						echo "<script> window.location.href = 'saleVehicleSearch.php'</script>";
+					}
+			}
+			
+			else {
+				echo "<script>alert('Failure')</script>";
+				echo "<script> window.location.href = 'index.html'</script>";
+			}
 			
 			break;
 	
@@ -122,12 +138,6 @@
 			echo "Found nothing!";
 			break;
 	}
-	
-	if($result) {
-		echo "Success<br>";
-	}
-	else
-		echo "Failure<br>";
 	
 	mysqli_close($link);
 
