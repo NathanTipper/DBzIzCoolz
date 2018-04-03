@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,29 +19,7 @@
 </head>
 <body>
 <?php
-    error_reporting(E_ALL);
-    ini_set('display_errors', 'on');
-    $user = 'root';
-    $password = 'root';
-    $db = 'westsideAuto';
-    $host = 'localhost';
-    $port = 3306;
-
-    $link = mysqli_init();
-    $success = mysqli_real_connect(
-       $link, 
-       $host, 
-       $user, 
-       $password, 
-       $db,
-       $port
-    );
-
-    if(!$success) {
-        echo "COULD NOT CONNECT<br>";
-        exit();
-    }
-    
+    include 'connectDB.php';
     $sql = "";
     $sql = "SELECT * FROM vehicle";
 ?>
@@ -71,12 +50,12 @@
                 </div>
             </div>
         </div>
-        <form action="" id="searchVehicle" style="margin-bottom: 30px;">
+        <form action="validVehicle.php" method="post" id="searchVehicle" style="margin-bottom: 30px;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="vin" placeholder="Enter vehicle vin number">
+                            <input type="text" class="form-control" name="VIN" placeholder="Enter vehicle vin number">
                             <span class="input-group-btn">
                                 <a class="btn btn-primary" onclick="checkInputs('searchVehicle')">Submit</a>
                                 </span>

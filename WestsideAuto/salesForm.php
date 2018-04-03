@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +28,20 @@
         <div class="row">
             <div class="col-sm">
                 <h1>Vehicle Sale</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <p><b>Customer name:</b> <?php echo $_SESSION["first_name"]." ".$_SESSION["last_name"]; ?></p>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <p><b>Vehicle Information:</b> <?php echo $_SESSION["year"]." ".$_SESSION["make"]." ".$_SESSION["model"]; ?></p>
             </div>
         </div>
     </div>

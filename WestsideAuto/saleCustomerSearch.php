@@ -17,6 +17,13 @@
     <link rel="stylesheet" type="text/css" href="style/myStyle.css">
 </head>
 <body>
+<!-- <?php
+    // error_reporting(E_ALL);
+    // ini_set('display_errors', 'on');
+    // include 'connectDB.php'; 
+    // session_start(); 
+    $customerDLN = ''?> -->
+
 <div class="jumbotron">
     <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">
@@ -43,12 +50,12 @@
                 </div>
             </div>
         </div>
-        <form action="" id="searchCustomer">
+        <form action="validCustomer.php" method="post" id="searchCustomer">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="customerDLN" placeholder="Customer's driver licence number">
+                            <input type="text" class="form-control" name="customerDLN" placeholder="Customer's driver licence number" value=<?php echo $customerDLN; ?>>
                             <span class="input-group-btn">
                                 <a class="btn btn-primary" onclick="checkInputs('searchCustomer')">Submit</a>
                                 </span>
@@ -57,6 +64,12 @@
                 </div>
             </div>
         </form>
+        <!-- <?php 
+            // echo "<script> console.log('$customerDLN');</script>";
+            ?> -->
+          <!--   $sql = 'SELECT * FROM Customer WHERE Drivers_licence_no = $customerDLN';
+            $result = mysqli_query($link, $sql);
+            echo mysqli_num_rows($result); ?> -->
         <div class="container" style="margin: 20px 0 20px 0;">
             <div class="row">
                 <div class="col-sm">
