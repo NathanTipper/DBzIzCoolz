@@ -17,12 +17,6 @@
     <link rel="stylesheet" type="text/css" href="style/myStyle.css">
 </head>
 <body>
-<!-- <?php
-    // error_reporting(E_ALL);
-    // ini_set('display_errors', 'on');
-    // include 'connectDB.php'; 
-    // session_start(); 
-    $customerDLN = ''?> -->
 
 <div class="jumbotron">
     <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
@@ -33,7 +27,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <h1>Customer Infomration</h1>
+                <h1>Customer Information</h1>
             </div>
         </div>
         <div class="container">
@@ -64,27 +58,6 @@
                 </div>
             </div>
         </form>
-        <!-- <?php 
-            // echo "<script> console.log('$customerDLN');</script>";
-            ?> -->
-          <!--   $sql = 'SELECT * FROM Customer WHERE Drivers_licence_no = $customerDLN';
-            $result = mysqli_query($link, $sql);
-            echo mysqli_num_rows($result); ?> -->
-        <div class="container" style="margin: 20px 0 20px 0;">
-            <div class="row">
-                <div class="col-sm">
-                    <h3>OR</h3>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    <a href="saleNewCustomer.html" class="btn btn-primary">Add Customer</a>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 <script src="javascript/myScripts.js"></script>
 </body>
