@@ -58,6 +58,22 @@
 			}
 			
 			break;
+		case "vehicle":
+			$VIN = $_POST['VIN'];
+			$make = $_POST['make'];
+			$model = $_POST['model'];
+			$trim = $_POST['trim'];
+			$year = $_POST['year'];
+			$color = $_POST['color'];
+			$current_condition = $_POST['vehicle_condition'];
+			$kilometers = $_POST['kilometers'];
+			$style = $_POST['style'];
+			$interiorColor = $_POST['interior_color'];
+			
+			$sql = "INSERT INTO vehicle (VIN, make, model, trim, year, color, current_condition, km, style, interior_color) VALUES (\"$VIN\", \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\")"; 
+			$result = mysqli_query($link, $sql);
+			break;
+			
 		case "employee":
 			$empid = $_POST['empid'];
 			$employee_first_name = $_POST['employee_first_name'];
