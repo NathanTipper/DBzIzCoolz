@@ -1,22 +1,7 @@
 <?php
 	session_start();
 	error_reporting(E_ALL);
-	ini_set('display_errors', 'on');
-	$user = 'root';
-	$password = 'root';
-	$db = 'westsideAuto';
-	$host = 'localhost';
-	$port = 3307;
-
-	$link = mysqli_init();
-	$success = mysqli_real_connect(
-	   $link, 
-	   $host, 
-	   $user, 
-	   $password, 
-	   $db,
-	   $port
-	);
+	include 'connectDB';
 	
 	if(!$success)
 		exit("Couldn't connect to DB");
@@ -99,7 +84,7 @@
 			$customer_gender = $_POST['customer_gender'];
 			$customer_DOB = $_POST['customer_DOB'];
 			
-			$sql = "INSERT INTO customers (drivers_license_no, TaxID, address, city, province, postal_code, first_name, last_name, no_of_late_payments, gender, DOB) VALUES ($drivers_license_no, $tax_id, \"$customer_address\", \"$customer_city\", \"$customer_province\", \"$postal_code\", \"$customer_first_name\", \"$customer_last_name\", $no_of_late_payments, \"$customer_gender\", $customer_DOB)";
+			$sql = "INSERT INTO customers (drivers_license_no, TaxID, address, city, province, postal_code, first_name, last_name, no_of_late_payments, gender, DOB) VALUES (\"$drivers_license_no\", $tax_id, \"$customer_address\", \"$customer_city\", \"$customer_province\", \"$postal_code\", \"$customer_first_name\", \"$customer_last_name\", $no_of_late_payments, \"$customer_gender\", $customer_DOB)";
 			$result = mysqli_query($link, $sql);
 			if($result) {
 					echo "<script>alert('Success')</script>";
