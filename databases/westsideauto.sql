@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 03, 2018 at 07:45 PM
+-- Generation Time: Apr 03, 2018 at 08:26 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -124,7 +124,8 @@ CREATE TABLE `r_SoldTo` (
 --
 
 CREATE TABLE `r_VehicleSold` (
-  `invoice_no` varchar(25) NOT NULL
+  `invoice_no` varchar(25) NOT NULL,
+  `VIN` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -224,7 +225,8 @@ ALTER TABLE `r_SoldTo`
 -- Indexes for table `r_VehicleSold`
 --
 ALTER TABLE `r_VehicleSold`
-  ADD UNIQUE KEY `invoice_no` (`invoice_no`);
+  ADD UNIQUE KEY `invoice_no` (`invoice_no`),
+  ADD KEY `VIN_const_2` (`VIN`);
 
 --
 -- Indexes for table `r_VehicleUnderWarranty`
@@ -253,7 +255,7 @@ ALTER TABLE `Warranty`
 -- AUTO_INCREMENT for table `Employee`
 --
 ALTER TABLE `Employee`
-  MODIFY `empid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000;
+  MODIFY `empid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Purchased`
@@ -290,6 +292,7 @@ ALTER TABLE `r_SoldTo`
 -- Constraints for table `r_VehicleSold`
 --
 ALTER TABLE `r_VehicleSold`
+  ADD CONSTRAINT `VIN_const_2` FOREIGN KEY (`VIN`) REFERENCES `Vehicle` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `invoice_no_const` FOREIGN KEY (`invoice_no`) REFERENCES `Invoice` (`invoice_no`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
