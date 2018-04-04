@@ -4,6 +4,7 @@ include 'connectDB.php';
 $make = $_POST['make'];
 $model = $_POST['model'];
 $year = $_POST['year'];
+$searchType = $_POST['searchType'];
 $isEmpty = True;
 
 $sql = "SELECT * FROM vehicle";
@@ -36,6 +37,23 @@ if($year != '') {
 		$sql = $sql.' and year = "'.$year.'"';
 	}
 	$isEmpty = False;
+}
+if($searchType == 'lot') {
+    if($isEmpty) {
+    $sql = $sql.' WHERE VIN not in (SELECT VIN FROM r_vehicleSold);';
+    }
+    else {
+    $sql = $sql.' and VIN not in (SELECT VIN FROM r_vehicleSold);';
+    }
+}
+
+if($searchType == 'sold') {
+    if($isEmpty) {
+    $sql = $sql.' WHERE VIN in (SELECT VIN FROM r_vehicleSold);';
+    }
+    else {
+    $sql = $sql.' and VIN in (SELECT VIN FROM r_vehicleSold);';
+    }
 }
 ?>
 
@@ -101,23 +119,3 @@ if($year != '') {
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
