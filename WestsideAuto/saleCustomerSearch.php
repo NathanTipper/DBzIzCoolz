@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="style/myStyle.css">
 </head>
 <body>
-
+<?php $customerDLN = ''; ?>
 <div class="jumbotron">
     <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">
@@ -49,10 +49,10 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="customerDLN" placeholder="Customer's driver licence number" value=<?php echo $customerDLN; ?>>
+                            <input type="text" class="form-control" name="customerDLN" placeholder="Customer's driver license number" value=<?php echo $customerDLN; ?>>
                             <span class="input-group-btn">
                                 <a class="btn btn-primary" onclick="checkInputs('searchCustomer')">Submit</a>
-                                </span>
+                            </span>
                         </div>
                     </div>
                 </div>

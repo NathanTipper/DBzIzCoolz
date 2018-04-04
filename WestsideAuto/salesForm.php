@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-sm">
                     <label for="date">Date</label>
-                    <input type="date" class="form-control" id="date" placeholder="YYYY/DD/MM">
+                    <input type="date" class="form-control" id="date" name="date_purchased" placeholder="YYYY/DD/MM">
                 </div>
             </div>
         </div>
@@ -101,7 +101,6 @@
         <div class="container" style="padding-top: 30px">
             <div class="row">
                 <div class="col-sm">
-                    <!--<button class="btn btn-primary" onclick="checkInputs('purchaseInfo')">Submit</button>-->
                     <a class="btn btn-primary" onclick="checkInputs('saleInfo')">Submit</a>
                     <button class="btn btn-secondary" type="reset" value="Reset">Reset</button>
                 </div>
