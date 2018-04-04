@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 03, 2018 at 08:26 PM
+-- Generation Time: Apr 04, 2018 at 01:47 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -35,7 +35,6 @@ CREATE TABLE `Customer` (
   `postal_code` varchar(6) NOT NULL,
   `first_name` varchar(25) NOT NULL,
   `last_name` varchar(25) NOT NULL,
-  `no_of_late_payments` int(11) NOT NULL,
   `gender` varchar(30) NOT NULL,
   `DOB` date DEFAULT NULL,
   `phone_no` varchar(16) NOT NULL
@@ -66,8 +65,25 @@ CREATE TABLE `Employee` (
 --
 
 CREATE TABLE `Invoice` (
-  `invoice_no` varchar(25) NOT NULL,
-  `date_purchased` date NOT NULL
+  `invoice_no` int(11) NOT NULL,
+  `date_purchased` date NOT NULL,
+  `price_sold` int(11) NOT NULL,
+  `down_payment` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Payments`
+--
+
+CREATE TABLE `Payments` (
+  `paymentID` int(11) NOT NULL,
+  `payment_date` date NOT NULL,
+  `amount` int(11) NOT NULL,
+  `no_payments_made` int(11) NOT NULL,
+  `no_late_payments` int(11) DEFAULT NULL,
+  `bank_info` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -82,6 +98,17 @@ CREATE TABLE `Purchased` (
   `seller` varchar(60) NOT NULL,
   `isAuction` tinyint(1) NOT NULL,
   `location` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `r_CustomerPayments`
+--
+
+CREATE TABLE `r_CustomerPayments` (
+  `paymentID` int(11) NOT NULL,
+  `drivers_license_no` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -103,7 +130,7 @@ CREATE TABLE `r_PurchasedRelationship` (
 
 CREATE TABLE `r_SoldBy` (
   `empid` int(11) NOT NULL,
-  `invoice_no` varchar(25) NOT NULL
+  `invoice_no` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -114,7 +141,7 @@ CREATE TABLE `r_SoldBy` (
 
 CREATE TABLE `r_SoldTo` (
   `drivers_license_no` varchar(25) NOT NULL,
-  `invoice_no` varchar(25) NOT NULL
+  `invoice_no` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -124,7 +151,7 @@ CREATE TABLE `r_SoldTo` (
 --
 
 CREATE TABLE `r_VehicleSold` (
-  `invoice_no` varchar(25) NOT NULL,
+  `invoice_no` int(11) NOT NULL,
   `VIN` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -149,6 +176,8 @@ CREATE TABLE `r_VehicleUnderWarranty` (
 
 CREATE TABLE `Vehicle` (
   `VIN` varchar(25) NOT NULL,
+  `price` int(11) NOT NULL,
+  `book_price` int(11) NOT NULL,
   `make` varchar(20) NOT NULL,
   `model` varchar(30) NOT NULL,
   `trim` varchar(25) NOT NULL,
@@ -195,10 +224,23 @@ ALTER TABLE `Invoice`
   ADD PRIMARY KEY (`invoice_no`);
 
 --
+-- Indexes for table `Payments`
+--
+ALTER TABLE `Payments`
+  ADD PRIMARY KEY (`paymentID`);
+
+--
 -- Indexes for table `Purchased`
 --
 ALTER TABLE `Purchased`
   ADD PRIMARY KEY (`purchase_ID`);
+
+--
+-- Indexes for table `r_CustomerPayments`
+--
+ALTER TABLE `r_CustomerPayments`
+  ADD UNIQUE KEY `paymentID` (`paymentID`),
+  ADD UNIQUE KEY `drivers_license_no` (`drivers_license_no`);
 
 --
 -- Indexes for table `r_PurchasedRelationship`
@@ -258,14 +300,57 @@ ALTER TABLE `Employee`
   MODIFY `empid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `Invoice`
+--
+ALTER TABLE `Invoice`
+  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `Payments`
+--
+ALTER TABLE `Payments`
+  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `Purchased`
 --
 ALTER TABLE `Purchased`
   MODIFY `purchase_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `r_CustomerPayments`
+--
+ALTER TABLE `r_CustomerPayments`
+  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `r_SoldBy`
+--
+ALTER TABLE `r_SoldBy`
+  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `r_SoldTo`
+--
+ALTER TABLE `r_SoldTo`
+  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `r_VehicleSold`
+--
+ALTER TABLE `r_VehicleSold`
+  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `r_CustomerPayments`
+--
+ALTER TABLE `r_CustomerPayments`
+  ADD CONSTRAINT `drivers_license_const` FOREIGN KEY (`drivers_license_no`) REFERENCES `Customer` (`drivers_license_no`),
+  ADD CONSTRAINT `payments_ID_Const` FOREIGN KEY (`paymentID`) REFERENCES `Payments` (`paymentID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `r_PurchasedRelationship`
@@ -279,21 +364,21 @@ ALTER TABLE `r_PurchasedRelationship`
 --
 ALTER TABLE `r_SoldBy`
   ADD CONSTRAINT `empid_const` FOREIGN KEY (`empid`) REFERENCES `Employee` (`empid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `invoice_constraint` FOREIGN KEY (`invoice_no`) REFERENCES `Invoice` (`invoice_no`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `invoice_no_constraint` FOREIGN KEY (`invoice_no`) REFERENCES `Invoice` (`invoice_no`);
 
 --
 -- Constraints for table `r_SoldTo`
 --
 ALTER TABLE `r_SoldTo`
   ADD CONSTRAINT `drivers_license_no_constraint` FOREIGN KEY (`drivers_license_no`) REFERENCES `Customer` (`drivers_license_no`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `invoice_no_constraint` FOREIGN KEY (`invoice_no`) REFERENCES `Invoice` (`invoice_no`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `invoice_const` FOREIGN KEY (`invoice_no`) REFERENCES `Invoice` (`invoice_no`);
 
 --
 -- Constraints for table `r_VehicleSold`
 --
 ALTER TABLE `r_VehicleSold`
   ADD CONSTRAINT `VIN_const_2` FOREIGN KEY (`VIN`) REFERENCES `Vehicle` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `invoice_no_const` FOREIGN KEY (`invoice_no`) REFERENCES `Invoice` (`invoice_no`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `invoice_no_constr` FOREIGN KEY (`invoice_no`) REFERENCES `Invoice` (`invoice_no`);
 
 --
 -- Constraints for table `r_VehicleUnderWarranty`
