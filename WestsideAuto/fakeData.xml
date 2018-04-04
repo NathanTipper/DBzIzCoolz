@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FakeData>
+	<Customers>
+		<Customer>
+			<drivers_license_no>155285-281</drivers_license_no>
+			<address>106 Purdue Ct. W</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T1K4R8</postal_code>
+			<first_name>Nathan</first_name>
+			<last_name>Tipper</last_name>
+			<gender>Male</gender>
+			<DOB>1991-07-22</DOB>
+		</Customer>
+		<Customer>
+			<drivers_license_no>198762-755</drivers_license_no>
+			<address>122 Red Crow Blvd.</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T1K7J8</postal_code>
+			<first_name>Jim</first_name>
+			<last_name>Pitt</last_name>
+			<gender>Male</gender>
+			<DOB>1976-02-13</DOB>
+		</Customer>
+		<Customer>
+			<drivers_license_no>965231-901</drivers_license_no>
+			<address>119 Jerry Potts Blvd.</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T1K6R3</postal_code>
+			<first_name>Deborah</first_name>
+			<last_name>Smith</last_name>
+			<gender>Female</gender>
+			<DOB>1996-09-18</DOB>
+		</Customer>
+	</Customers>
+</FakeData>

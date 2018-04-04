@@ -164,6 +164,7 @@
 				exit();
 			}
 
+			echo "<script>alert('Success!')</script>";
 			break;
 
 		default:

@@ -18,7 +18,7 @@
 </head>
 <body>
 <?php
-	$customerDLN = "";
+	$customerDLN = "";	
 ?>
 <div class="jumbotron">
     <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
