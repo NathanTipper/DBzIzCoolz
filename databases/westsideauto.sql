@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 31, 2018 at 04:53 PM
+-- Generation Time: Apr 03, 2018 at 07:45 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -37,7 +37,8 @@ CREATE TABLE `Customer` (
   `last_name` varchar(25) NOT NULL,
   `no_of_late_payments` int(11) NOT NULL,
   `gender` varchar(30) NOT NULL,
-  `DOB` date DEFAULT NULL
+  `DOB` date DEFAULT NULL,
+  `phone_no` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -47,7 +48,7 @@ CREATE TABLE `Customer` (
 --
 
 CREATE TABLE `Employee` (
-  `empid` varchar(20) NOT NULL,
+  `empid` int(11) NOT NULL,
   `dept` varchar(40) NOT NULL,
   `first_name` varchar(25) NOT NULL,
   `last_name` varchar(25) NOT NULL,
@@ -101,7 +102,7 @@ CREATE TABLE `r_PurchasedRelationship` (
 --
 
 CREATE TABLE `r_SoldBy` (
-  `empid` varchar(20) NOT NULL,
+  `empid` int(11) NOT NULL,
   `invoice_no` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -134,7 +135,9 @@ CREATE TABLE `r_VehicleSold` (
 
 CREATE TABLE `r_VehicleUnderWarranty` (
   `warranty_name` varchar(50) NOT NULL,
-  `VIN` varchar(25) NOT NULL
+  `VIN` varchar(25) NOT NULL,
+  `length_in_months` int(11) NOT NULL,
+  `start_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -164,8 +167,6 @@ CREATE TABLE `Vehicle` (
 
 CREATE TABLE `Warranty` (
   `warranty_name` varchar(50) NOT NULL,
-  `start_date` date NOT NULL,
-  `length_months` int(11) NOT NULL,
   `cost_per_month` double NOT NULL,
   `deductible` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -245,6 +246,22 @@ ALTER TABLE `Warranty`
   ADD PRIMARY KEY (`warranty_name`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Employee`
+--
+ALTER TABLE `Employee`
+  MODIFY `empid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000;
+
+--
+-- AUTO_INCREMENT for table `Purchased`
+--
+ALTER TABLE `Purchased`
+  MODIFY `purchase_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -253,13 +270,13 @@ ALTER TABLE `Warranty`
 --
 ALTER TABLE `r_PurchasedRelationship`
   ADD CONSTRAINT `VIN_constraint` FOREIGN KEY (`VIN`) REFERENCES `Vehicle` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `purchase_ID_constraint` FOREIGN KEY (`purchase_ID`) REFERENCES `Purchased` (`purchase_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `purchase_id_const` FOREIGN KEY (`purchase_ID`) REFERENCES `Purchased` (`purchase_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `r_SoldBy`
 --
 ALTER TABLE `r_SoldBy`
-  ADD CONSTRAINT `empid_constraint` FOREIGN KEY (`empid`) REFERENCES `Employee` (`empid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `empid_const` FOREIGN KEY (`empid`) REFERENCES `Employee` (`empid`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `invoice_constraint` FOREIGN KEY (`invoice_no`) REFERENCES `Invoice` (`invoice_no`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
