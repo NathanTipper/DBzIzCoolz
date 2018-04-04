@@ -3,7 +3,8 @@
 	ini_set('display_errors', 'on');
 	error_reporting(E_ALL);
 	include 'connectDB.php';
-
+	
+	
 	if(!$success)
 		exit("Couldn't connect to DB");
 
@@ -114,7 +115,7 @@
 			}
 
 			else {
-				echo "<script>alert('$sql')</script>";
+				echo "<script>alert('Failure')</script>";
 				echo "<script> window.location.href = 'index.html'</script>";
 			}
 
@@ -122,18 +123,46 @@
 
 
 		case "warranty":
-			$warranty_name = _POST['warranty_name'];
-			$cost_per_month = _POST['cost_per_month'];
-			$deductible = _POST['deductible'];
+			$warranty_name = $_POST['warranty_name'];
+			$cost_per_month = $_POST['cost_per_month'];
+			$deductible = $_POST['deductible'];
 
 			$sql = "INSERT INTO warranty (warranty_name, cost_per_month, deductible) VALUES (\"$warranty_name\", $cost_per_month, $deductible)";
 			break;
 
 		case "invoice":
-			$invoice_no = _POST['invoice_no'];
-			$date_purchased = _POST['date_purchased'];
-
-			$sql = "INSERT INTO invoice (invoice_no, date_purchased) VALUES (\"$invoice_no\", \"$date_purchased\")";
+			$date_purchased = $_POST['date_purchased'];
+			
+			$sql = "INSERT INTO invoice (date_purchased) VALUES (\"$date_purchased\")";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('Failure: Could not add to invoice')</script>";
+				exit();
+			}
+			
+			$VIN = $_SESSION['VIN'];
+			$sql = "INSERT INTO r_vehiclesold (VIN) VALUES (\"$VIN\")";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('Failure: Could not add to r_vehiclesold')</script>";
+				exit();
+			}
+			
+			$customerDLN = $_SESSION['drivers_license_no'];
+			$sql = "INSERT INTO r_soldto (drivers_license_no) VALUES (\"$customerDLN\")";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('Failure: Could not add to r_soldto')</script>";
+				exit();
+			}
+			
+			$employeeID = $_POST['empid'];
+			$sql = "INSERT INTO r_soldby (empid) VALUES (\"$employeeID\")";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('Failure: Could not add to r_soldto')</script>";
+				exit();
+			}
 
 			break;
 
