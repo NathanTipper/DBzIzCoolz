@@ -37,16 +37,6 @@ if($year != '') {
 	}
 	$isEmpty = False;
 }
-
-// $result = mysqli_query($link, $sql);
-// $rows = mysqli_num_rows($result);
-// 	if($rows != 0) {
-// 		$row = mysqli_fetch_array($result);
-// 		echo $row[1];
-// 	}
-// 	else {
-// 		echo "no results";
-// 	}
 ?>
 
 <!DOCTYPE html>
