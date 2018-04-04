@@ -102,11 +102,14 @@
 			$result = mysqli_query($link, $sql);
 			if($result) {
 					echo "<script>alert('Success')</script>";
-					if($_SESSION['inSale']) {
+					if($_SESSION['inSale'] == 1) {
+						$_SESSION['inSale'] = 0;
+						$_SESSION["first_name"] = $customer_first_name;
+						$_SESSION["last_name"] = $customer_last_name;
 						echo "<script> window.location.href = 'saleVehicleSearch.php'</script>";
 					}
 					else {
-						echo "<script> window.location.href = 'saleVehicleSearch.php'</script>";
+						echo "<script> window.location.href = 'index.html'</script>";
 					}
 			}
 

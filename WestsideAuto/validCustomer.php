@@ -18,7 +18,8 @@
 	}
 	
 	else {
-		echo "<script> window.location.href = 'saleNewCustomer.html'</script>";
+		$_SESSION['inSale'] = 1;
+		echo "<script> window.location.href = 'newCustomerForm.html'</script>";
 	}
 		
 ?>
