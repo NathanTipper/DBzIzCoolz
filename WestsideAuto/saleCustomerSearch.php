@@ -17,9 +17,7 @@
     <link rel="stylesheet" type="text/css" href="style/myStyle.css">
 </head>
 <body>
-<?php
-	$customerDLN = "";	
-?>
+<?php $customerDLN = ''; ?>
 <div class="jumbotron">
     <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">

@@ -29,7 +29,7 @@
     <hr class="my-4">
 </div>
 <div id="searchVehiclePage" class="topDiv">
-    <a href="saleCustomerSearch.html"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
+    <a href="saleCustomerSearch.php"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
     <div class="container">
         <div class="row">
             <div class="col-sm">
