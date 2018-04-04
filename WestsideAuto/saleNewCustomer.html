@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
+    <title>WestSide Autos</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style/myStyle.css">
+</head>
+<body>
+<div class="jumbotron">
+    <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
+    <hr class="my-4">
+</div>
+
+<div id="employeeFormTop" class="topDiv">
+    <a href="saleCustomerSearch.php"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1>Add a new customer</h1>
+            </div>
+        </div>
+        <form id="addCustomer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <label for="customerLastName">Last Name</label>
+                        <input type="text" class="form-control" id="customerLastName"
+                               placeholder="Enter last name">
+                    </div>
+                    <div class="col-sm">
+                        <label for="customerFirstName">First Name</label>
+                        <input type="text" class="form-control" id="customerFirstName"
+                               placeholder="Enter first name">
+                    </div>
+                    <div class="col-sm">
+                        <label for="customerPhone">Phone</label>
+                        <input type="text" class="form-control" id="customerPhone"
+                               placeholder="Enter phone number">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter street address">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" placeholder="Enter city">
+                    </div>
+                    <div class="col-sm">
+                        <label for="province">Province</label>
+                        <select id="province" class="form-control">
+                            <option selected>Province</option>
+                            <option>Alberta</option>
+                            <option>British Columbia</option>
+                            <option>Manitoba</option>
+                            <option>New Brunswick</option>
+                            <option>Newfoundland and Labrador</option>
+                            <option>Northwest Territories</option>
+                            <option>Nunavut</option>
+                            <option>Nova Scotia</option>
+                            <option>Ontario</option>
+                            <option>Prince Edward Island</option>
+                            <option>Quebec</option>
+                            <option>Saskatchewan</option>
+                            <option>Yukon</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" class="form-control" id="postalCode" placeholder="Enter postal code">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <label for="dln">Driver's Licence Number</label>
+                        <input type="text" class="form-control" name="dln" id="dln"
+                               placeholder="Enter driver's licence number">
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="padding-top: 20px">
+                <div class="row">
+                    <div class="col-sm">
+                        <a class="btn btn-primary" onclick="checkInputs('addCustomer')">Submit</a>
+                        <button class="btn btn-secondary" type="reset" value="Reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="javascript/myScripts.js"></script>
+</body>
+</html>
