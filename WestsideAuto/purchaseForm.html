@@ -14,15 +14,15 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="myStyle.css">
+    <link rel="stylesheet" type="text/css" href="style/myStyle.css">
 </head>
 <body>
 <div class="jumbotron">
     <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">
 </div>
-
-<div id="purchaseFormTop" style="padding: 30px">
+<div id="purchaseFormTop" class="topDiv">
+    <a href="index.html"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
     <div class="container">
         <div class="row">
             <div class="col-sm">
@@ -35,8 +35,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <label for="date">Date</label>
-                    <input type="date" class="form-control" id="date" name="date_of_purchase" placeholder="YYYY/DD/MM">
+                    <label for="date">Date (YYYY-DD-MM)</label>
+                    <input type="date" class="form-control" id="date" name="date_of_purchase" placeholder="YYYY-DD-MM">
                 </div>
             </div>
         </div>
@@ -75,15 +75,18 @@
             <div class="row">
                 <div class="col-sm">
                     <label for="make">Make</label>
-                    <input type="text" class="form-control" id="make" name="make" placeholder="Enter make of the vehicle">
+                    <input type="text" class="form-control" id="make" name="make"
+                           placeholder="Enter make of the vehicle">
                 </div>
                 <div class="col-sm">
                     <label for="model">Model</label>
-                    <input type="text" class="form-control" id="model" name="model" placeholder="Enter model of the vehicle">
+                    <input type="text" class="form-control" id="model" name="model"
+                           placeholder="Enter model of the vehicle">
                 </div>
                 <div class="col-sm">
                     <label for="year">Year</label>
-                    <input type="text" class="form-control" id="year" name="year" placeholder="Enter year of the vehicle">
+                    <input type="text" class="form-control" id="year" name="year"
+                           placeholder="Enter year of the vehicle">
                 </div>
             </div>
         </div>
@@ -99,7 +102,8 @@
                 </div>
                 <div class="col-sm">
                     <label for="condition">Condition</label>
-                    <input type="text" class="form-control" id="condition" name="vehicle_condition" placeholder="Enter condition">
+                    <input type="text" class="form-control" id="condition" name="vehicle_condition"
+                           placeholder="Enter condition">
                 </div>
             </div>
         </div>
@@ -107,11 +111,25 @@
             <div class="row">
                 <div class="col-sm">
                     <label for="interiorColour">Interior Colour</label>
-                    <input type="text" class="form-control" id="interiorColour" name="interior_color" placeholder="Enter Interior Colour">
+                    <input type="text" class="form-control" id="interiorColour" name="interior_color"
+                           placeholder="Enter Interior Colour">
                 </div>
                 <div class="col-sm">
                     <label for="style">Style</label>
-                    <input type="text" class="form-control" id="style" name="style" placeholder="Enter style">
+                    <select id="style" name="style" class="form-control">
+                        <option selected>Style</option>
+                        <option>Convertible</option>
+                        <option>Coupe</option>
+                        <option>Hatchback</option>
+                        <option>Minivan</option>
+                        <option>Van</option>
+                        <option>Pickup Truck</option>
+                        <option>Sedan</option>
+                        <option>SUV</option>
+                        <option>Crossover</option>
+                        <option>Wagon</option>
+                        <option>Other</option>
+                    </select>
                 </div>
                 <div class="col-sm">
                     <label for="trim">Trim</label>
@@ -120,16 +138,16 @@
             </div>
         </div>
         <!--<div class="container">-->
-            <!--<div class="row">-->
-                <!--<div class="col-sm">-->
-                    <!--<label for="bookPrice"> Book Price</label>-->
-                    <!--<input type="text" class="form-control" id="bookPrice" placeholder="Enter the book price">-->
-                <!--</div>-->
-                <!--<div class="col-sm">-->
-                    <!--<label for="purchasePrice"> Purchased Price</label>-->
-                    <!--<input type="text" class="form-control" id="purchasePrice" placeholder="Enter the purchased price">-->
-                <!--</div>-->
-            <!--</div>-->
+        <!--<div class="row">-->
+        <!--<div class="col-sm">-->
+        <!--<label for="bookPrice"> Book Price</label>-->
+        <!--<input type="text" class="form-control" id="bookPrice" placeholder="Enter the book price">-->
+        <!--</div>-->
+        <!--<div class="col-sm">-->
+        <!--<label for="purchasePrice"> Purchased Price</label>-->
+        <!--<input type="text" class="form-control" id="purchasePrice" placeholder="Enter the purchased price">-->
+        <!--</div>-->
+        <!--</div>-->
         <!--</div>-->
         <div class="container">
             <div class="row">
@@ -159,29 +177,7 @@
         </div>
     </form>
 </div>
-
-
-<form action="searchDB.php" method="post" id="searchVIN">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <label for="search_vin">Search</label>
-                <input type="text" class="form-control" id="search_vin" name="VIN" placeholder="">
-            </div>
-        </div>
-    </div>
-    <input type="hidden" name="search" value="vehicles_on_lot">
-    <div class="container" style="padding-top: 30px">
-        <div class="row">
-            <div class="col-sm">
-                <!--<button class="btn btn-primary" onclick="checkInputs('purchaseInfo')">Submit</button>-->
-                <a class="btn btn-primary" onclick="checkInputs('searchVIN')">Submit</a>
-                <button class="btn btn-secondary" type="reset" value="Reset">Reset</button>
-            </div>
-        </div>
-    </div>
-</form>
-<script src="myScripts.js"></script>
+<script src="javascript/myScripts.js"></script>
 </body>
 
 
