@@ -1,3 +1,5 @@
+<?php session_start()
+$damageArray = array(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,10 +19,7 @@
     <link rel="stylesheet" type="text/css" href="style/myStyle.css">
 </head>
 <body>
-
-
-
-<!-- Modal -->
+<!-- Repair Modal -->
 <div class="modal fade" id="damageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -33,12 +32,6 @@
             <div class="modal-body">
                 <form action="addDamage.php" method="post" id="addDmg">
                     <div class="container" style="padding-bottom: 20px;">
-                        <div class="row">
-                            <div class="col-sm">
-                                <label for="modalVin">VIN</label>
-                                <input type="" class="form-control" id="modalVin" name="modalVin" disabled>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-sm">
                                 <label for="problem">Problem</label>
@@ -214,11 +207,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#damageModal"-->
-                            <!--onclick="checkVIN(vin)" style="margin-top: 10px;">-->
-                        <!--Add Repair-->
-                    <!--</button>-->
-                    <a class="btn btn-primary" onclick="checkVIN('vin')" style="margin-top: 10px; color: white;">Add Repair</a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#damageModal" style="margin-top: 10px;">
+                        Add Repair
+                    </button>
                 </div>
             </div>
         </div>

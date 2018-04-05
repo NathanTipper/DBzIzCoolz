@@ -38,6 +38,19 @@ function checkInputModal(x) {
     }
 }
 
+function checkVIN(x) {
+    var vin = document.getElementById(x);
+
+    if(vin.value.length > 1) {
+        document.getElementById('modalVin').value = vin.value;
+        $('#damageModal').modal('show');
+
+    }
+    else {
+        alert('Please enter a VIN number first');
+    }
+}
+
 function backBtn() {
     history.go(-1);
 }
