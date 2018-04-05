@@ -36,7 +36,13 @@
 		$province = $employee->province;
 		$address = $employee->address;
 		
-		$sql = "INSERT INTO employee (empid, dept, first_name, last_name, phone_no, city, postal_code, province, address) VALUES (\"$empid\", \"$dept\", \"$first_name\", \"$last_name\", $phone_no, \"$city\", \"$postal_code\", \"$province\", \"$address\")";
+		$sql = "SELECT * FROM employee";
+		$result = mysqli_query($link, $sql);
+		if(mysqli_num_rows($result)) {
+			break;
+		}
+		
+		$sql = "INSERT INTO employee (dept, first_name, last_name, phone_no, city, postal_code, province, address) VALUES (\"$dept\", \"$first_name\", \"$last_name\", $phone_no, \"$city\", \"$postal_code\", \"$province\", \"$address\")";
 		$result = mysqli_query($link, $sql);
 		if(!$result) {
 			echo "<script>alert('Failure: Could not add to employee')</script>";
@@ -52,6 +58,9 @@
 		
 		$sql = "SELECT * FROM purchased";
 		$result = mysqli_query($link, $sql);
+		if(mysqli_num_rows($result)) {
+			break;
+		}
 		
 		$sql = "INSERT INTO purchased (date_of_purchase, seller, isAuction, location) VALUES (\"$date_of_purchase\", \"$seller\", $isAuction, \"$location\")";
 		$result = mysqli_query($link, $sql);
