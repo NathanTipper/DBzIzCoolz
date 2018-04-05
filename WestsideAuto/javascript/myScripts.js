@@ -32,6 +32,7 @@ function checkInputModal(x) {
     if(isValid){
         document.getElementById(x).submit();
         $('#damageModal').modal('hide');
+        document.getElementById(x).reset();
     }
     else {
         alert('Please fill all required fields');

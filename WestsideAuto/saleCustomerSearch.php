@@ -40,7 +40,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <h5>Search existing customer or add a new customer</h5>
+                    <h5>Enter customer's drivers license number</h5>
                 </div>
             </div>
         </div>
@@ -54,6 +54,7 @@
                                 <a class="btn btn-primary" onclick="checkInputs('searchCustomer')">Submit</a>
                             </span>
                         </div>
+                        <small>*You will be prompt to add customer if he does not exist in the database</small>
                     </div>
                 </div>
             </div>
