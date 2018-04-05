@@ -20,8 +20,7 @@
 <body>
 <?php
     include 'connectDB.php';
-    $sql = "";
-    $sql = "SELECT * FROM vehicle";
+    $sql = "SELECT * FROM vehicle WHERE vin NOT IN (SELECT vin FROM r_vehicleSold)";
 ?>
 
 <div class="jumbotron">
