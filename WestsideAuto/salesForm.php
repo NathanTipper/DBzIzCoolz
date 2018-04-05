@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-    <form action="" id="saleInfo">
+    <form action="insertIntoDB.php" method="post" id="saleInfo">
         <div class="container">
             <div class="row">
                 <div class="col-sm">
@@ -98,6 +98,7 @@
                 </div>
             </div>
         </div>
+        <input type="hidden" name="insert_into" value="invoice">
         <div class="container" style="padding-top: 30px">
             <div class="row">
                 <div class="col-sm">

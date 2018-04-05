@@ -28,17 +28,62 @@
         <entry file="file://$PROJECT_DIR$/lookupVehicleForm.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1545">
-              <caret line="103" column="7" lean-forward="true" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+              <caret line="103" column="7" lean-forward="false" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lookupCustomerForm.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lookupCustomerForm.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lookupCustomerForm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+            <state relative-caret-position="-46">
+              <caret line="57" column="79" lean-forward="false" selection-start-line="57" selection-start-column="79" selection-end-line="57" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newEmployeeForm.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newEmployeeForm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="117" column="42" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="purchaseForm.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/purchaseForm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="71" column="10" lean-forward="false" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+              <folding>
+                <element signature="e#1634#1641#1" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#9;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#10;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myScripts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javascript/myScripts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connectDB.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/connectDB.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -47,7 +92,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="750">
               <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
               <folding />
             </state>
@@ -57,7 +102,7 @@
       <file leaf-file-name="myStyle.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/myStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
+            <state relative-caret-position="434">
               <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
@@ -97,14 +142,14 @@
         <option value="$PROJECT_DIR$/saleCustomerSearch.php" />
         <option value="$PROJECT_DIR$/newEmployeeForm.html" />
         <option value="$PROJECT_DIR$/insertIntoDB.php" />
-        <option value="$PROJECT_DIR$/javascript/myScripts.js" />
-        <option value="$PROJECT_DIR$/purchaseForm.html" />
         <option value="$PROJECT_DIR$/newCustomerForm.html" />
         <option value="$PROJECT_DIR$/searchVehicle.php" />
         <option value="$PROJECT_DIR$/style/myStyle.css" />
         <option value="$PROJECT_DIR$/lookupVehicleForm.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/lookupCustomerForm.html" />
+        <option value="$PROJECT_DIR$/javascript/myScripts.js" />
+        <option value="$PROJECT_DIR$/purchaseForm.html" />
       </list>
     </option>
   </component>
@@ -209,12 +254,13 @@
       <workItem from="1522807100111" duration="4679000" />
       <workItem from="1522816945191" duration="524000" />
       <workItem from="1522818899246" duration="575000" />
-      <workItem from="1522865244273" duration="2052000" />
+      <workItem from="1522865244273" duration="2908000" />
+      <workItem from="1522951942656" duration="2044000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44877000" />
+    <option name="totallyTimeSpent" value="47777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -223,12 +269,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12684989" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47037485" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16444983" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -293,11 +339,31 @@
     <entry file="file://$PROJECT_DIR$/insertIntoDB.php" />
     <entry file="file://$PROJECT_DIR$/searchDB.php" />
     <entry file="file://$PROJECT_DIR$/saleVehicleSearch.php" />
-    <entry file="file://$PROJECT_DIR$/connectDB.php" />
-    <entry file="file://$PROJECT_DIR$/javascript/myScripts.js" />
     <entry file="file://$PROJECT_DIR$/newCustomerForm.html" />
-    <entry file="file://$PROJECT_DIR$/newEmployeeForm.html" />
-    <entry file="file://$PROJECT_DIR$/purchaseForm.html" />
+    <entry file="file://$PROJECT_DIR$/lookupVehicleForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="103" column="7" lean-forward="false" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connectDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/searchVehicle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -308,33 +374,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style/myStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
+        <state relative-caret-position="434">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lookupVehicleForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1545">
-          <caret line="103" column="7" lean-forward="true" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lookupCustomerForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+        <state relative-caret-position="-46">
+          <caret line="57" column="79" lean-forward="false" selection-start-line="57" selection-start-column="79" selection-end-line="57" selection-end-column="79" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newEmployeeForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="117" column="42" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/myScripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchaseForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="71" column="10" lean-forward="false" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+          <folding>
+            <element signature="e#1634#1641#1" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#9;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#10;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

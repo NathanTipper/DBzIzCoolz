@@ -3,7 +3,7 @@ include 'connectDB.php';
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
-$drivers_licence_no = $_POST['drivers_licence_no'];
+$drivers_license_no = $_POST['drivers_license_no'];
 $searchType = $_POST['searchType'];
 $isEmpty = True;
 
@@ -29,32 +29,35 @@ if($last_name != '') {
 	$isEmpty = False;
 }
 
-if($drivers_licence_no != '') {
+if($drivers_license_no != '') {
 	if($isEmpty) {
-		$sql = $sql.' WHERE drivers_licence_no = "'.$drivers_licence_no.'"';
+		$sql = $sql.' WHERE drivers_license_no = "'.$drivers_license_no.'"';
 	}
 	else {
-		$sql = $sql.' and drivers_licence_no = "'.$drivers_licence_no.'"';
+		$sql = $sql.' and drivers_license_no = "'.$drivers_license_no.'"';
 	}
 	$isEmpty = False;
 }
-// if($searchType == 'lot') {
-//     if($isEmpty) {
-//     $sql = $sql.' WHERE VIN not in (SELECT VIN FROM r_vehicleSold);';
-//     }
-//     else {
-//     $sql = $sql.' and VIN not in (SELECT VIN FROM r_vehicleSold);';
-//     }
-// }
+if($searchType == 'noPurchase') {
+    if($isEmpty) {
+    $sql = $sql.' WHERE drivers_license_no not in (SELECT drivers_license_no FROM r_soldTo);';
+    }
+    else {
+    $sql = $sql.' and drivers_license_no not in (SELECT drivers_license_no FROM r_soldTo);';
+    }
+}
 
-// if($searchType == 'sold') {
-//     if($isEmpty) {
-//     $sql = $sql.' WHERE VIN in (SELECT VIN FROM r_vehicleSold);';
-//     }
-//     else {
-//     $sql = $sql.' and VIN in (SELECT VIN FROM r_vehicleSold);';
-//     }
-// }
+if($searchType == 'withPurchase') {
+    if($isEmpty) {
+    $sql = $sql.' WHERE drivers_license_no in (SELECT drivers_license_no FROM r_soldTo);';
+    }
+    else {
+    $sql = $sql.' and drivers_license_no in (SELECT drivers_license_no FROM r_soldTo);';
+    }
+
+    // $carSoldSql = 'SELECT make, model, year, invoice_no FROM vehicle, invoice WHERE '
+}
+// echo $sql;
 ?>
 
 <!DOCTYPE html>
@@ -112,10 +115,12 @@ if($drivers_licence_no != '') {
                     echo "<div class=\"row\">";
                     echo "<div class=\"col-sm-4\"><b>Postal Code: </b>".$row[5]."</div>";
                     echo "<div class=\"col-sm-4\"><b>Date of Birth: </b>".$row[10]."</div>";
-                    echo "<div class=\"col-sm-4\"><b>Drivers Licence Number: </b>".$row[0]."</div>";
+                    echo "<div class=\"col-sm-4\"><b>Drivers license Number: </b>".$row[0]."</div>";
                     echo "</div>";
                     echo "<div class=\"row\">";
+                    if($searchType == 'withPurchase') {
                     echo "<div class=\"col-sm-4\"><b># of Late Payments: </b>".$row[8]."</div>";
+                    }
                     echo "<div class=\"col-sm-4\"><b>Tax ID: </b>".$row[1]."</div>";
                     echo "</div>";
                     echo "<hr>";        

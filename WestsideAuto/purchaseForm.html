@@ -17,6 +17,46 @@
     <link rel="stylesheet" type="text/css" href="style/myStyle.css">
 </head>
 <body>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="damageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="addDamage.php" method="post" id="addDmg">
+                    <div class="container" style="padding-bottom: 20px;">
+                        <div class="row">
+                            <div class="col-sm">
+                                <label for="problem">Problem</label>
+                                <input type="text" class="form-control" id="problem" name="problem" placeholder="Describe problem">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <label for="estRepairCost">Estimated repair cost</label>
+                                <input type="text" class="form-control" id="estRepairCost" name="estRepairCost" placeholder="$">
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary" onclick="checkInputModal('addDmg')">Submit</a>
+                    <!--<button class="btn btn-primary" style="margin-top: 10px;">Submit</button>-->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="jumbotron">
     <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">
@@ -30,7 +70,6 @@
             </div>
         </div>
     </div>
-
     <form id="purchaseInfo" action="insertIntoDB.php" method="post">
         <div class="container">
             <div class="row">
@@ -166,6 +205,15 @@
             </div>
         </div>
         <input type="hidden" name="insert_into" value="purchased">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#damageModal" style="margin-top: 10px;">
+                        Add Repair
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="container" style="padding-top: 30px">
             <div class="row">
                 <div class="col-sm">
