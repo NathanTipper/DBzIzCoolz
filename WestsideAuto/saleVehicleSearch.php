@@ -25,7 +25,7 @@
 ?>
 
 <div class="jumbotron">
-    <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
+    <a href="index.php"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">
 </div>
 <div id="searchVehiclePage" class="topDiv">
