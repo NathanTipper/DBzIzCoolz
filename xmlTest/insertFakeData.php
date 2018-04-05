@@ -50,6 +50,9 @@
 		$isAuction = $purchase->isAuction;
 		$location = $purchase->location;
 		
+		$sql = "SELECT * FROM purchased";
+		$result = mysqli_query($link, $sql);
+		
 		$sql = "INSERT INTO purchased (date_of_purchase, seller, isAuction, location) VALUES (\"$date_of_purchase\", \"$seller\", $isAuction, \"$location\")";
 		$result = mysqli_query($link, $sql);
 		if(!$result) {
