@@ -19,11 +19,11 @@
 <body>
 <?php $customerDLN = ''; ?>
 <div class="jumbotron">
-    <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
+    <a href="index.php"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">
 </div>
 <div id="searchCustomerPage" class="topDiv">
-    <a href="index.html"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
+    <a href="index.php"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
     <div class="container">
         <div class="row">
             <div class="col-sm">
