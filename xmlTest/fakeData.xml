@@ -11,6 +11,7 @@
 			<last_name>Tipper</last_name>
 			<gender>Male</gender>
 			<DOB>1991-07-22</DOB>
+			<phone_no>403-360-6998</phone_no>
 		</Customer>
 		<Customer>
 			<drivers_license_no>198762-755</drivers_license_no>
@@ -22,6 +23,7 @@
 			<last_name>Pitt</last_name>
 			<gender>Male</gender>
 			<DOB>1976-02-13</DOB>
+			<phone_no>403-795-9901</phone_no>
 		</Customer>
 		<Customer>
 			<drivers_license_no>965231-901</drivers_license_no>
@@ -33,6 +35,7 @@
 			<last_name>Smith</last_name>
 			<gender>Female</gender>
 			<DOB>1996-09-18</DOB>
+			<phone_no>403-360-2443</phone_no>
 		</Customer>
 		<Customer>
 			<drivers_license_no>345219-213</drivers_license_no>
@@ -44,6 +47,7 @@
 			<last_name>Herbert</last_name>
 			<gender>Female</gender>
 			<DOB>1992-05-09</DOB>
+			<phone_no>403-393-4451</phone_no>
 		</Customer>
 		<Customer>
 			<drivers_license_no>245671-234</drivers_license_no>
@@ -55,6 +59,7 @@
 			<last_name>Varbark</last_name>
 			<gender>Male</gender>
 			<DOB>1984-11-09</DOB>
+			<phone_no>403-795-6948</phone_no>
 		</Customer>
 		<Customer>
 			<drivers_license_no>225612-762</drivers_license_no>
@@ -66,6 +71,7 @@
 			<last_name>Duke</last_name>
 			<gender>Female</gender>
 			<DOB>1996-01-29</DOB>
+			<phone_no>403-393-4558</phone_no>
 		</Customer>
 		<Customer>
 			<drivers_license_no>279081-013</drivers_license_no>
@@ -77,17 +83,7 @@
 			<last_name>Tippitappi</last_name>
 			<gender>Male</gender>
 			<DOB>1987-04-21</DOB>
-		</Customer>
-		<Customer>
-			<drivers_license_no>279081-013</drivers_license_no>
-			<address>101 Stardew Rd.</address>
-			<city>Calgary</city>
-			<province>AB</province>
-			<postal_code>C5S3X0</postal_code>
-			<first_name>Shane</first_name>
-			<last_name>Tippitappi</last_name>
-			<gender>Male</gender>
-			<DOB>1987-04-21</DOB>
+			<phone_no>403-393-8792</phone_no>
 		</Customer>
 		<Customer>
 			<drivers_license_no>819221-190</drivers_license_no>
@@ -99,6 +95,7 @@
 			<last_name>Duke</last_name>
 			<gender>Male</gender>
 			<DOB>1891-03-03</DOB>
+			<phone_no>403-795-5661</phone_no>
 		</Customer>
 		<Customer>
 			<drivers_license_no>762182-629</drivers_license_no>
@@ -110,6 +107,7 @@
 			<last_name>Jones</last_name>
 			<gender>Female</gender>
 			<DOB>1984-08-01</DOB>
+			<phone_no>403-360-1369</phone_no>
 		</Customer>
 	</Customers>
 	<Employees>
@@ -181,7 +179,7 @@
 			<book_price>9000</book_price>
 			<make>Dodge</make>
 			<model>Dart</model>
-			<trim>None</trim>
+			<car_trim>None</car_trim>
 			<year>2012</year>
 			<color>Black</color>
 			<current_condition>Good</current_condition>
@@ -195,7 +193,7 @@
 			<book_price>2750</book_price>
 			<make>Volkswagon</make>
 			<model>Jetta</model>
-			<trim>None</trim>
+			<car_trim>None</car_trim>
 			<year>2002</year>
 			<color>Grey</color>
 			<current_condition>Poor</current_condition>
@@ -209,7 +207,7 @@
 			<book_price>10900</book_price>
 			<make>Ford</make>
 			<model>Mustang</model>
-			<trim>None</trim>
+			<car_trim>None</car_trim>
 			<year>2014</year>
 			<color>Red</color>
 			<current_condition>Excellent</current_condition>
@@ -223,7 +221,7 @@
 			<book_price>3600</book_price>
 			<make>Ford</make>
 			<model>Focus</model>
-			<trim>None</trim>
+			<car_trim>None</car_trim>
 			<year>2010</year>
 			<color>Blue</color>
 			<current_condition>Great</current_condition>
@@ -237,7 +235,7 @@
 			<book_price>7800</book_price>
 			<make>Dodge</make>
 			<model>Challenger</model>
-			<trim>None</trim>
+			<car_trim>None</car_trim>
 			<year>2009</year>
 			<color>Orange</color>
 			<current_condition>Excellent</current_condition>
@@ -251,7 +249,7 @@
 			<book_price>5100</book_price>
 			<make>Toyota</make>
 			<model>Camry</model>
-			<trim>None</trim>
+			<car_trim>None</car_trim>
 			<year>2010</year>
 			<color>Red</color>
 			<current_condition>Poor</current_condition>
@@ -265,7 +263,7 @@
 			<book_price>2900</book_price>
 			<make>Dodge</make>
 			<model>Dakota</model>
-			<trim>None</trim>
+			<car_trim>None</car_trim>
 			<year>2009</year>
 			<color>Black</color>
 			<current_condition>Great</current_condition>
@@ -279,7 +277,7 @@
 			<book_price>6100</book_price>
 			<make>Honda</make>
 			<model>Accord</model>
-			<trim>None</trim>
+			<car_trim>None</car_trim>
 			<year>2005</year>
 			<color>Blue</color>
 			<current_condition>Good</current_condition>
@@ -293,7 +291,7 @@
 			<book_price>5400</book_price>
 			<make>Hyundai</make>
 			<model>Elantra</model>
-			<trim>None</trim>
+			<car_trim>None</car_trim>
 			<year>2012</year>
 			<color>Red</color>
 			<current_condition>Great</current_condition>
@@ -307,7 +305,7 @@
 			<book_price>3100</book_price>
 			<make>Jeep</make>
 			<model>Wrangler</model>
-			<trim>None</trim>
+			<car_trim>None</car_trim>
 			<year>2016</year>
 			<color>Blue</color>
 			<current_condition>Excellent</current_condition>
@@ -321,7 +319,7 @@
 			<book_price>4950</book_price>
 			<make>Chrysler</make>
 			<model>200</model>
-			<trim>None</trim>
+			<car_trim>None</car_trim>
 			<year>2010</year>
 			<color>Grey</color>
 			<current_condition>Good</current_condition>
@@ -330,7 +328,72 @@
 			<interior>Black</interior>
 		</Vehicle>
 	</Vehicles>
-	<Purchase>
-	
-	</Purchased>
+	<Purchases>
+		<Purchase>
+			<date_of_purchase>04-04-2018</date_of_purchase>
+			<seller>Bridge City</seller>
+			<isAuction>0</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>02-01-2018</date_of_purchase>
+			<seller>Balog Auction</seller>
+			<isAuction>1</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>02-10-2018</date_of_purchase>
+			<seller>Ford</seller>
+			<isAuction>0</isAuction>
+			<location>Edmonton, Alberta</location>
+		</Purchase>
+			<Purchase>
+			<date_of_purchase>02-06-2018</date_of_purchase>
+			<seller>Ford</seller>
+			<isAuction>0</isAuction>
+			<location>Edmonton, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>03-26-2018</date_of_purchase>
+			<seller>Bridge City</seller>
+			<isAuction>0</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>12-28-2017</date_of_purchase>
+			<seller>Harry Lenz Auction</seller>
+			<isAuction>1</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>03-28-2018</date_of_purchase>
+			<seller>Bridge City</seller>
+			<isAuction>0</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>03-22-2018</date_of_purchase>
+			<seller>Honda</seller>
+			<isAuction>0</isAuction>
+			<location>Calgary, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>01-05-2018</date_of_purchase>
+			<seller>Harry Lenz</seller>
+			<isAuction>1</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>02-19-2018</date_of_purchase>
+			<seller>Balog</seller>
+			<isAuction>1</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>11-30-2017</date_of_purchase>
+			<seller>Harry Lenz</seller>
+			<isAuction>1</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+	</Purchases>
 </FakeData>
