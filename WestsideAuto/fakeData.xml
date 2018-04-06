@@ -11,6 +11,7 @@
 			<last_name>Tipper</last_name>
 			<gender>Male</gender>
 			<DOB>1991-07-22</DOB>
+			<phone_no>403-360-6998</phone_no>
 		</Customer>
 		<Customer>
 			<drivers_license_no>198762-755</drivers_license_no>
@@ -22,6 +23,7 @@
 			<last_name>Pitt</last_name>
 			<gender>Male</gender>
 			<DOB>1976-02-13</DOB>
+			<phone_no>403-795-9901</phone_no>
 		</Customer>
 		<Customer>
 			<drivers_license_no>965231-901</drivers_license_no>
@@ -33,6 +35,387 @@
 			<last_name>Smith</last_name>
 			<gender>Female</gender>
 			<DOB>1996-09-18</DOB>
+			<phone_no>403-360-2443</phone_no>
+		</Customer>
+		<Customer>
+			<drivers_license_no>345219-213</drivers_license_no>
+			<address>598 Canyon Blvd. W</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T1K9P2</postal_code>
+			<first_name>Carley</first_name>
+			<last_name>Herbert</last_name>
+			<gender>Female</gender>
+			<DOB>1992-05-09</DOB>
+			<phone_no>403-393-4451</phone_no>
+		</Customer>
+		<Customer>
+			<drivers_license_no>245671-234</drivers_license_no>
+			<address>136 6th St S</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T437Y5</postal_code>
+			<first_name>Adam</first_name>
+			<last_name>Varbark</last_name>
+			<gender>Male</gender>
+			<DOB>1984-11-09</DOB>
+			<phone_no>403-795-6948</phone_no>
+		</Customer>
+		<Customer>
+			<drivers_license_no>225612-762</drivers_license_no>
+			<address>441 Cowichan Crt. W</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T5S3Y3</postal_code>
+			<first_name>Katelyn</first_name>
+			<last_name>Duke</last_name>
+			<gender>Female</gender>
+			<DOB>1996-01-29</DOB>
+			<phone_no>403-393-4558</phone_no>
+		</Customer>
+		<Customer>
+			<drivers_license_no>279081-013</drivers_license_no>
+			<address>101 Stardew Rd.</address>
+			<city>Calgary</city>
+			<province>AB</province>
+			<postal_code>C5S3X0</postal_code>
+			<first_name>Shane</first_name>
+			<last_name>Tippitappi</last_name>
+			<gender>Male</gender>
+			<DOB>1987-04-21</DOB>
+			<phone_no>403-393-8792</phone_no>
+		</Customer>
+		<Customer>
+			<drivers_license_no>819221-190</drivers_license_no>
+			<address>323 14th St S</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T1KJ7T</postal_code>
+			<first_name>Francis</first_name>
+			<last_name>Duke</last_name>
+			<gender>Male</gender>
+			<DOB>1891-03-03</DOB>
+			<phone_no>403-795-5661</phone_no>
+		</Customer>
+		<Customer>
+			<drivers_license_no>762182-629</drivers_license_no>
+			<address>287 5th St N</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T1KH5J</postal_code>
+			<first_name>Jessica</first_name>
+			<last_name>Jones</last_name>
+			<gender>Female</gender>
+			<DOB>1984-08-01</DOB>
+			<phone_no>403-360-1369</phone_no>
 		</Customer>
 	</Customers>
+	<Employees>
+		<Employee>
+			<dept>Sales</dept>
+			<first_name>Jerry</first_name>
+			<last_name>Seinfeld</last_name>
+			<phone_no>4037957123</phone_no>
+			<address>1001 Uplands Blvd. N</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T7N9J2</postal_code>
+		</Employee>
+		<Employee>
+			<dept>Mechanic</dept>
+			<first_name>Maria</first_name>
+			<last_name>Suarez</last_name>
+			<phone_no>4033600914</phone_no>
+			<address>421 15th St N</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T2N2V7</postal_code>
+		</Employee>
+		<Employee>
+			<dept>Sales</dept>
+			<first_name>Rachel</first_name>
+			<last_name>Greene</last_name>
+			<phone_no>4033732291</phone_no>
+			<address>92 Chilcotin Rd. W</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T1J2J3</postal_code>
+		</Employee>
+		<Employee>
+			<dept>Sales</dept>
+			<first_name>Chandler</first_name>
+			<last_name>Bing</last_name>
+			<phone_no>4037955556</phone_no>
+			<address>42 16th St. W</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T6S2Y1</postal_code>
+		</Employee>
+		<Employee>
+			<dept>Sales</dept>
+			<first_name>Melissa</first_name>
+			<last_name>Kingley</last_name>
+			<phone_no>4033607781</phone_no>
+			<address>102 Rutgers Rd. W</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T1J3K2</postal_code>
+		</Employee>
+		<Employee>
+			<dept>Sales</dept>
+			<first_name>Matt</first_name>
+			<last_name>Damon</last_name>
+			<phone_no>4037951452</phone_no>
+			<address>324 Mt. Blakiston Rd. W</address>
+			<city>Lethbridge</city>
+			<province>AB</province>
+			<postal_code>T5V4V2</postal_code>
+		</Employee>
+	</Employees>
+	<Vehicles>
+		<Vehicle>
+			<VIN>233FR398W3RF23145</VIN>
+			<price>10500</price>
+			<book_price>9000</book_price>
+			<make>Dodge</make>
+			<model>Dart</model>
+			<car_trim>None</car_trim>
+			<year>2012</year>
+			<color>Black</color>
+			<current_condition>Good</current_condition>
+			<km>100234</km>
+			<style>Sedan</style>
+			<interior>Black</interior>
+		</Vehicle>
+		<Vehicle>
+			<VIN>2FRJOI1PSF23145PL</VIN>
+			<price>5000</price>
+			<book_price>2750</book_price>
+			<make>Volkswagon</make>
+			<model>Jetta</model>
+			<car_trim>None</car_trim>
+			<year>2002</year>
+			<color>Grey</color>
+			<current_condition>Poor</current_condition>
+			<km>120912</km>
+			<style>Sedan</style>
+			<interior>Grey</interior>
+		</Vehicle>
+		<Vehicle>
+			<VIN>3RFR1AYPSF98145PL</VIN>
+			<price>14400</price>
+			<book_price>10900</book_price>
+			<make>Ford</make>
+			<model>Mustang</model>
+			<car_trim>None</car_trim>
+			<year>2014</year>
+			<color>Red</color>
+			<current_condition>Excellent</current_condition>
+			<km>80781</km>
+			<style>Other</style>
+			<interior>Black</interior>
+		</Vehicle>
+		<Vehicle>
+			<VIN>2LAWPSFIBVA72509</VIN>
+			<price>6900</price>
+			<book_price>3600</book_price>
+			<make>Ford</make>
+			<model>Focus</model>
+			<car_trim>None</car_trim>
+			<year>2010</year>
+			<color>Blue</color>
+			<current_condition>Great</current_condition>
+			<km>131910</km>
+			<style>Sedan</style>
+			<interior>Grey</interior>
+		</Vehicle>
+		<Vehicle>
+			<VIN>P96AP7LYUTA145PL</VIN>
+			<price>12900</price>
+			<book_price>7800</book_price>
+			<make>Dodge</make>
+			<model>Challenger</model>
+			<car_trim>None</car_trim>
+			<year>2009</year>
+			<color>Orange</color>
+			<current_condition>Excellent</current_condition>
+			<km>80623</km>
+			<style>Other</style>
+			<interior>Black</interior>
+		</Vehicle>
+		<Vehicle>
+			<VIN>M12RPL81623P32JU2</VIN>
+			<price>8900</price>
+			<book_price>5100</book_price>
+			<make>Toyota</make>
+			<model>Camry</model>
+			<car_trim>None</car_trim>
+			<year>2010</year>
+			<color>Red</color>
+			<current_condition>Poor</current_condition>
+			<km>270982</km>
+			<style>Sedan</style>
+			<interior>Black</interior>
+		</Vehicle>
+		<Vehicle>
+			<VIN>245PL2RT765WD9P8I</VIN>
+			<price>5250</price>
+			<book_price>2900</book_price>
+			<make>Dodge</make>
+			<model>Dakota</model>
+			<car_trim>None</car_trim>
+			<year>2009</year>
+			<color>Black</color>
+			<current_condition>Great</current_condition>
+			<km>110012</km>
+			<style>Truck</style>
+			<interior>Grey</interior>
+		</Vehicle>
+		<Vehicle>
+			<VIN>K34R89UA49TPY0M21</VIN>
+			<price>8350</price>
+			<book_price>6100</book_price>
+			<make>Honda</make>
+			<model>Accord</model>
+			<car_trim>None</car_trim>
+			<year>2005</year>
+			<color>Blue</color>
+			<current_condition>Good</current_condition>
+			<km>178190</km>
+			<style>Sedan</style>
+			<interior>Grey</interior>
+		</Vehicle>
+		<Vehicle>
+			<VIN>85FG3W6Y89CA9023B</VIN>
+			<price>9800</price>
+			<book_price>5400</book_price>
+			<make>Hyundai</make>
+			<model>Elantra</model>
+			<car_trim>None</car_trim>
+			<year>2012</year>
+			<color>Red</color>
+			<current_condition>Great</current_condition>
+			<km>100912</km>
+			<style>Sedan</style>
+			<interior>Black</interior>
+		</Vehicle>
+		<Vehicle>
+			<VIN>U6TRF897F6YCKA30L</VIN>
+			<price>8100</price>
+			<book_price>3100</book_price>
+			<make>Jeep</make>
+			<model>Wrangler</model>
+			<car_trim>None</car_trim>
+			<year>2016</year>
+			<color>Blue</color>
+			<current_condition>Excellent</current_condition>
+			<km>60981</km>
+			<style>Offroad</style>
+			<interior>Grey</interior>
+		</Vehicle>
+		<Vehicle>
+			<VIN>O9HNM67540JHA23R2</VIN>
+			<price>9500</price>
+			<book_price>4950</book_price>
+			<make>Chrysler</make>
+			<model>200</model>
+			<car_trim>None</car_trim>
+			<year>2010</year>
+			<color>Grey</color>
+			<current_condition>Good</current_condition>
+			<km>180657</km>
+			<style>Sedan</style>
+			<interior>Black</interior>
+		</Vehicle>
+	</Vehicles>
+	<Purchases>
+		<Purchase>
+			<date_of_purchase>04-04-2018</date_of_purchase>
+			<seller>Bridge City</seller>
+			<isAuction>0</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>02-01-2018</date_of_purchase>
+			<seller>Balog Auction</seller>
+			<isAuction>1</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>02-10-2018</date_of_purchase>
+			<seller>Ford</seller>
+			<isAuction>0</isAuction>
+			<location>Edmonton, Alberta</location>
+		</Purchase>
+			<Purchase>
+			<date_of_purchase>02-06-2018</date_of_purchase>
+			<seller>Ford</seller>
+			<isAuction>0</isAuction>
+			<location>Edmonton, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>03-26-2018</date_of_purchase>
+			<seller>Bridge City</seller>
+			<isAuction>0</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>12-28-2017</date_of_purchase>
+			<seller>Harry Lenz Auction</seller>
+			<isAuction>1</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>03-28-2018</date_of_purchase>
+			<seller>Bridge City</seller>
+			<isAuction>0</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>03-22-2018</date_of_purchase>
+			<seller>Honda</seller>
+			<isAuction>0</isAuction>
+			<location>Calgary, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>01-05-2018</date_of_purchase>
+			<seller>Harry Lenz</seller>
+			<isAuction>1</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>02-19-2018</date_of_purchase>
+			<seller>Balog</seller>
+			<isAuction>1</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+		<Purchase>
+			<date_of_purchase>11-30-2017</date_of_purchase>
+			<seller>Harry Lenz</seller>
+			<isAuction>1</isAuction>
+			<location>Lethbridge, Alberta</location>
+		</Purchase>
+	</Purchases>
+	<Damages>
+		<Damage>
+			<est_cost>890</est_cost>
+			<description>Locks need to be rewired</description>
+		</Damage>
+		<Damage>
+			<est_cost>3120</est_cost>
+			<description>Timing chain needs to be replaced</description>
+		</Damage>
+		<Damage>
+			<est_cost>1100</est_cost>
+			<description>Couple of dings need to be fixed up</description>
+		</Damage>
+		<Damage>
+			<est_cost>800</est_cost>
+			<description>Headlights need replacing</description>
+		</Damage>
+		<Damage>
+			<est_cost>1800</est_cost>
+			<description>Needs a new battery</description>
+		</Damage>
+	</Damages>
 </FakeData>

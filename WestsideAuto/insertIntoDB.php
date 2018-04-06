@@ -21,6 +21,8 @@
 			$isAuction = $_POST['isAuction'];
 			$location = $_POST['location'];
 
+			$
+			
 			if($isAuction == 'Yes')
 				$isAuction = 1;
 			else
@@ -110,13 +112,13 @@
 						echo "<script> window.location.href = 'saleVehicleSearch.php'</script>";
 					}
 					else {
-						echo "<script> window.location.href = 'index.html'</script>";
+						echo "<script> window.location.href = 'index.php'</script>";
 					}
 			}
 
 			else {
 				echo "<script>alert('Failure')</script>";
-				echo "<script> window.location.href = 'index.html'</script>";
+				echo "<script> window.location.href = 'index.php'</script>";
 			}
 
 			break;
@@ -135,9 +137,10 @@
 			$cost_of_vehicle = $_POST['cost_of_vehicle'];
 			$cost_of_warranty = $_POST['cost_of_warranty'];
 			$down_payment = $_POST['down_payment'];
-			$
 			
-			$sql = "INSERT INTO invoice (date_purchased) VALUES (\"$date_purchased\")";
+			$price_sold = $cost_of_vehicle + $cost_of_warranty;
+			
+			$sql = "INSERT INTO invoice (date_purchased, price_sold, down_payment) VALUES (\"$date_purchased\", $price_sold, $down_payment)";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
 				echo "<script>alert('Failure: Could not add to invoice')</script>";
