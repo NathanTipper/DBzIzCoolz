@@ -26,55 +26,49 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <h1>Lookup Vehicles</h1>
+                <h1>Lookup Customer</h1>
             </div>
         </div>
     </div>
 
-    <form action="searchVehicle.php" method="post" id="searchVehicles">
+    <form action="searchCustomer.php" method="post" id="searchCustomers">
         <div class="container">
             <div class="row">
                 <div class="col-sm" style="padding-bottom: 10px;">
-                    <label for="make">Make</label>
-                    <input type="text" class="form-control" id="make" name="make"
-                           placeholder="Enter make of the vehicle">
+                    <label for="first_name">First Name</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name"
+                           placeholder="Enter first name">
                 </div>
                 <div class="col-sm">
-                    <label for="model">Model</label>
-                    <input type="text" class="form-control" id="model" name="model"
-                           placeholder="Enter model of the vehicle">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name"
+                           placeholder="Enter last name">
                 </div>
                 <div class="col-sm">
-                    <label for="year">Year</label>
-                    <input type="text" class="form-control" id="year" name="year"
-                           placeholder="Enter year of the vehicle">
+                    <label for="drivers_licence_no">Drivers License Number</label>
+                    <input type="text" class="form-control" id="drivers_licence_no" name="drivers_licence_no"
+                           placeholder="Enter drivers license number">
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm">
                             <div class="form-check" style="padding-bottom: 10px;">
-                                <input class="form-check-input" type="radio" name="searchType" id="inventory"
-                                       value="lot" checked>
-                                <label class="form-check-label" for="inventory">
-                                    Vehicles on lot
+                                <input class="form-check-input" type="radio" name="searchType" id="noPurchase"
+                                       value="noPurchase" checked>
+                                <label class="form-check-label" for="noPurchase">
+                                    Never purchased a vehicle
                                 </label>
                             </div>
                         </div>
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm-2">
+                                <div class="col-sm">
                                     <div class="form-check" style="padding-bottom: 10px;">
-                                        <input class="form-check-input" type="radio" name="searchType" id="soldVehicles"
-                                               value="sold">
-                                        <label class="form-check-label" for="soldVehicles">
-                                            Vehicles sold
+                                        <input class="form-check-input" type="radio" name="searchType" id="withPurchase"
+                                               value="withPurchase">
+                                        <label class="form-check-label" for="withPurchase">
+                                            Has purchased vehicle(s)
                                         </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="withWarranty" id="withWarranty" value="true">
-                                        <label class="form-check-label" for="withWarranty">With warranty</label>
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +84,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm">
-                            <small>*leave fields black for all vehicle</small>
+                            <small>*leave fields black for all customers</small>
                         </div>
                     </div>
                 </div>

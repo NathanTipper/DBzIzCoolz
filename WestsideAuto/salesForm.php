@@ -19,7 +19,7 @@
 </head>
 <body>
 <div class="jumbotron">
-    <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
+    <a href="index.php"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">
 </div>
 <div id="purchaseFormTop" class="topDiv">
@@ -45,12 +45,12 @@
             </div>
         </div>
     </div>
-    <form action="" id="saleInfo">
+    <form action="insertIntoDB.php" method="post" id="saleInfo">
         <div class="container">
             <div class="row">
                 <div class="col-sm">
                     <label for="date">Date</label>
-                    <input type="date" class="form-control" id="date" placeholder="YYYY/DD/MM">
+                    <input type="date" class="form-control" id="date" name="date_purchased" placeholder="YYYY/DD/MM">
                 </div>
             </div>
         </div>
@@ -98,10 +98,10 @@
                 </div>
             </div>
         </div>
+        <input type="hidden" name="insert_into" value="invoice">
         <div class="container" style="padding-top: 30px">
             <div class="row">
                 <div class="col-sm">
-                    <!--<button class="btn btn-primary" onclick="checkInputs('purchaseInfo')">Submit</button>-->
                     <a class="btn btn-primary" onclick="checkInputs('saleInfo')">Submit</a>
                     <button class="btn btn-secondary" type="reset" value="Reset">Reset</button>
                 </div>

@@ -20,16 +20,15 @@
 <body>
 <?php
     include 'connectDB.php';
-    $sql = "";
-    $sql = "SELECT * FROM vehicle";
+    $sql = "SELECT * FROM vehicle WHERE vin NOT IN (SELECT vin FROM r_vehicleSold)";
 ?>
 
 <div class="jumbotron">
-    <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
+    <a href="index.php"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">
 </div>
 <div id="searchVehiclePage" class="topDiv">
-    <a href="saleCustomerSearch.html"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
+    <a href="saleCustomerSearch.php"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
     <div class="container">
         <div class="row">
             <div class="col-sm">

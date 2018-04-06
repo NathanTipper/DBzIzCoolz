@@ -17,13 +17,13 @@
     <link rel="stylesheet" type="text/css" href="style/myStyle.css">
 </head>
 <body>
-
+<?php $customerDLN = ''; ?>
 <div class="jumbotron">
-    <a href="index.html"><h1 class="display-4">Westside Autos</h1></a>
+    <a href="index.php"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">
 </div>
 <div id="searchCustomerPage" class="topDiv">
-    <a href="index.html"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
+    <a href="index.php"><img src="./assets/backBtn.png" alt="back" class="backBtn"></a>
     <div class="container">
         <div class="row">
             <div class="col-sm">
@@ -40,7 +40,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <h5>Search existing customer or add a new customer</h5>
+                    <h5>Enter customer's drivers license number</h5>
                 </div>
             </div>
         </div>
@@ -49,11 +49,12 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="customerDLN" placeholder="Customer's driver licence number" value=<?php echo $customerDLN; ?>>
+                            <input type="text" class="form-control" name="customerDLN" placeholder="Customer's driver license number" value=<?php echo $customerDLN; ?>>
                             <span class="input-group-btn">
                                 <a class="btn btn-primary" onclick="checkInputs('searchCustomer')">Submit</a>
-                                </span>
+                            </span>
                         </div>
+                        <small>*You will be prompt to add customer if he does not exist in the database</small>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+<?php include 'insertFakeData.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +49,7 @@
             <a href="newCustomerForm.html" class="btn homeOptions">Add a New Customer </a>
         </div>
         <div class="col-sm">
-            <a href="#" class="btn homeOptions">Lookup Customers</a>
+            <a href="lookupCustomerForm.html" class="btn homeOptions">Lookup Customers</a>
         </div>
     </div>
 </div>

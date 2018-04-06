@@ -3,7 +3,8 @@
 	ini_set('display_errors', 'on');
 	error_reporting(E_ALL);
 	include 'connectDB.php';
-
+	
+	
 	if(!$success)
 		exit("Couldn't connect to DB");
 
@@ -20,6 +21,8 @@
 			$isAuction = $_POST['isAuction'];
 			$location = $_POST['location'];
 
+			$
+			
 			if($isAuction == 'Yes')
 				$isAuction = 1;
 			else
@@ -102,36 +105,73 @@
 			$result = mysqli_query($link, $sql);
 			if($result) {
 					echo "<script>alert('Success')</script>";
-					if($_SESSION['inSale']) {
+					if($_SESSION['inSale'] == 1) {
+						$_SESSION['inSale'] = 0;
+						$_SESSION["first_name"] = $customer_first_name;
+						$_SESSION["last_name"] = $customer_last_name;
 						echo "<script> window.location.href = 'saleVehicleSearch.php'</script>";
 					}
 					else {
-						echo "<script> window.location.href = 'saleVehicleSearch.php'</script>";
+						echo "<script> window.location.href = 'index.php'</script>";
 					}
 			}
 
 			else {
-				echo "<script>alert('$sql')</script>";
-				echo "<script> window.location.href = 'index.html'</script>";
+				echo "<script>alert('Failure')</script>";
+				echo "<script> window.location.href = 'index.php'</script>";
 			}
 
 			break;
 
 
 		case "warranty":
-			$warranty_name = _POST['warranty_name'];
-			$cost_per_month = _POST['cost_per_month'];
-			$deductible = _POST['deductible'];
+			$warranty_name = $_POST['warranty_name'];
+			$cost_per_month = $_POST['cost_per_month'];
+			$deductible = $_POST['deductible'];
 
 			$sql = "INSERT INTO warranty (warranty_name, cost_per_month, deductible) VALUES (\"$warranty_name\", $cost_per_month, $deductible)";
 			break;
 
 		case "invoice":
-			$invoice_no = _POST['invoice_no'];
-			$date_purchased = _POST['date_purchased'];
+			$date_purchased = $_POST['date_purchased'];
+			$cost_of_vehicle = $_POST['cost_of_vehicle'];
+			$cost_of_warranty = $_POST['cost_of_warranty'];
+			$down_payment = $_POST['down_payment'];
+			
+			$price_sold = $cost_of_vehicle + $cost_of_warranty;
+			
+			$sql = "INSERT INTO invoice (date_purchased, price_sold, down_payment) VALUES (\"$date_purchased\", $price_sold, $down_payment)";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('Failure: Could not add to invoice')</script>";
+				exit();
+			}
+			
+			$VIN = $_SESSION['VIN'];
+			$sql = "INSERT INTO r_vehiclesold (VIN) VALUES (\"$VIN\")";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('Failure: Could not add to r_vehiclesold')</script>";
+				exit();
+			}
+			
+			$customerDLN = $_SESSION['drivers_license_no'];
+			$sql = "INSERT INTO r_soldto (drivers_license_no) VALUES (\"$customerDLN\")";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('Failure: Could not add to r_soldto')</script>";
+				exit();
+			}
+			
+			$employeeID = $_POST['empid'];
+			$sql = "INSERT INTO r_soldby (empid) VALUES (\"$employeeID\")";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('Failure: Could not add to r_soldto')</script>";
+				exit();
+			}
 
-			$sql = "INSERT INTO invoice (invoice_no, date_purchased) VALUES (\"$invoice_no\", \"$date_purchased\")";
-
+			echo "<script>alert('Success!')</script>";
 			break;
 
 		default:
@@ -141,5 +181,5 @@
 
 	mysqli_close($link);
 
-	echo "<script> window.location.href = 'index.html';</script>";
+	echo "<script> window.location.href = 'index.php';</script>";
 ?>
