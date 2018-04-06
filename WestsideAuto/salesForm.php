@@ -58,7 +58,7 @@
             <div class="row">
                 <div class="col-sm">
                     <label for="has_warranty">Warranty?</label>
-                    <select id="has_warranty" name="is_warranty" class="form-control" onchange="toggleWarrantyInput(this.value)">
+                    <select id="has_warranty" name="has_warranty" class="form-control" onchange="toggleWarrantyInput(this.value)">
                         <option selected >No</option>
                         <option>Yes</option>
                     </select>

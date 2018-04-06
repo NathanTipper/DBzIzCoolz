@@ -147,14 +147,35 @@
 			$has_warranty = $_POST['has_warranty'];
 			$down_payment = $_POST['down_payment'];
 			
+			$VIN = $_SESSION['VIN'];
+			//$invoice_no = $_SESSION['invoice_no'];
+			$date = date('Y-m-d');
+			$price_sold = 0;
 			if($has_warranty == "Yes") {
 				$warranties = $_POST['warranty_name'];
 				$n = count($warranties);
 				
-				//$sql = "SELECT cost FROM warranty WHERE warranty_name = $warranties[
+				for($i = 0; $i < $n; $i++) {
+					$sql = "SELECT cost FROM warranty WHERE warranty_name = \"$warranties[$i]\"";
+					$result = mysqli_query($link, $sql);
+					if(mysqli_num_rows($result) > 0)  {
+						$row = mysqli_fetch_array($result);
+						$price_sold += $row[0];
+					}
+					
+					else {
+						echo "<script>alert('Failure: $sql ')</script>"; 
+					}
+					
+					$sql = "INSERT INTO r_vehicleunderwarranty (warranty_name, VIN, start_date) VALUES (\"$warranties[$i]\", \"$VIN\", \"$date_purchased\")";
+					$result = mysqli_query($link, $sql);
+					if(!$result) {
+						echo "<script>alert('Failure: $sql ')</script>"; 
+					}
+				}
 			}
 			
-			$price_sold = $cost_of_vehicle + $cost_of_warranty;
+			$price_sold += $cost_of_vehicle;
 			
 			$sql = "INSERT INTO invoice (date_purchased, price_sold, down_payment) VALUES (\"$date_purchased\", $price_sold, $down_payment)";
 			$result = mysqli_query($link, $sql);
@@ -163,8 +184,6 @@
 				exit();
 			}
 			
-			$VIN = $_SESSION['VIN'];
-			$invoice_no = $_SESSION['invoice_no'];
 			$sql = "INSERT INTO r_vehiclesold (VIN) VALUES (\"$VIN\")";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
@@ -198,5 +217,5 @@
 
 	mysqli_close($link);
 
-	echo "<script> window.location.href = 'index.php';</script>";
+	//echo "<script> window.location.href = 'index.php';</script>";
 ?>
