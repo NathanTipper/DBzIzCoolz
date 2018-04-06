@@ -93,16 +93,16 @@
 			$customer_last_name = $_POST['customer_last_name'];
 			$customer_address = $_POST['customer_address'];
 			$customer_province = $_POST['customer_province'];
-			$no_of_late_payments = 0;
 			$customer_city = $_POST['customer_city'];
 			$customer_postal_code = $_POST['customer_postal_code'];
 			$tax_id = $_POST['customer_tax_id'];
 			$customer_gender = $_POST['customer_gender'];
 			$customer_DOB = $_POST['customer_DOB'];
+			$customer_phone_number['phone_no'];
 
 			echo "<script>alert('$customer_DOB')</script>";
 
-			$sql = "INSERT INTO customer (drivers_license_no, TaxID, address, city, province, postal_code, first_name, last_name, no_of_late_payments, gender, DOB) VALUES (\"$drivers_license_no\", $tax_id, \"$customer_address\", \"$customer_city\", \"$customer_province\", \"$customer_postal_code\", \"$customer_first_name\", \"$customer_last_name\", $no_of_late_payments, \"$customer_gender\",\"$customer_DOB\")";
+			$sql = "INSERT INTO customer (drivers_license_no, TaxID, address, city, province, postal_code, first_name, last_name, gender, DOB, phone_no) VALUES (\"$drivers_license_no\", $tax_id, \"$customer_address\", \"$customer_city\", \"$customer_province\", \"$customer_postal_code\", \"$customer_first_name\", \"$customer_last_name\", \"$customer_gender\",\"$customer_DOB\", \"$phone_number\")";
 
 			$result = mysqli_query($link, $sql);
 			if($result) {
