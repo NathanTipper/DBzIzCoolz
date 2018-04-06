@@ -68,14 +68,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <label for="totalDue">Total Due</label>
+                    <label for="totalDue">Cost of Vehicle</label>
                     <input type="number" step="100" data-number-to-fixed="2" data-number-stepfactor="100"
-                           class="form-control" id="totalDue" placeholder="$">
+                           name="cost_of_vehicle" class="form-control" id="totalDue" placeholder="$">
                 </div>
                 <div class="col-sm">
                     <label for="downPayment">Down Payment</label>
                     <input type="number" step="100" data-number-to-fixed="2" data-number-stepfactor="100"
-                           class="form-control" id="downPayment" placeholder="$">
+                           name="down_payment" class="form-control" id="downPayment" placeholder="$">
                 </div>
                 <div class="col-sm">
                     <label for="financeAmount">Finance Amount</label>

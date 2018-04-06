@@ -17,7 +17,7 @@
       <file leaf-file-name="searchVehicle.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/searchVehicle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
+            <state relative-caret-position="1185">
               <caret line="79" column="23" lean-forward="false" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
               <folding />
             </state>
@@ -27,14 +27,44 @@
       <file leaf-file-name="validCustomer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/validCustomer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="24" column="2" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validVehicle.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lookupCustomerForm.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lookupCustomerForm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="purchaseForm.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purchaseForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="63" column="23" lean-forward="false" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lookupVehicleForm.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lookupVehicleForm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1545">
+              <caret line="103" column="7" lean-forward="false" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="validVehicle.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/validVehicle.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -44,40 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="purchaseForm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/purchaseForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="63" column="23" lean-forward="false" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="saleCustomerSearch.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/saleCustomerSearch.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="saleNewCustomer.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/saleNewCustomer.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-53">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="salesForm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/salesForm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
+            <state relative-caret-position="315">
               <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
               <folding />
             </state>
@@ -87,7 +87,7 @@
       <file leaf-file-name="saleVehicleSearch.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/saleVehicleSearch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
+            <state relative-caret-position="390">
               <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
               <folding />
             </state>
@@ -97,7 +97,7 @@
       <file leaf-file-name="searchCustomer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/searchCustomer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
+            <state relative-caret-position="1230">
               <caret line="82" column="23" lean-forward="false" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
               <folding />
             </state>
@@ -107,7 +107,7 @@
       <file leaf-file-name="searchDB.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/searchDB.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-53">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -199,7 +199,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -222,6 +221,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,16 +269,16 @@
       <workItem from="1522816945191" duration="524000" />
       <workItem from="1522818899246" duration="575000" />
       <workItem from="1522865244273" duration="2908000" />
-      <workItem from="1522951942656" duration="5014000" />
+      <workItem from="1522951942656" duration="5156000" />
+      <workItem from="1522963258724" duration="513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50747000" />
+    <option name="totallyTimeSpent" value="51402000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12684989" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -342,7 +342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -350,7 +349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="34" column="43" lean-forward="false" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -358,7 +356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="57" lean-forward="false" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -366,7 +363,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -374,7 +370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -390,31 +385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="583">
           <caret line="51" column="44" lean-forward="false" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
-          <folding>
-            <marker date="1522957641775" expanded="true" signature="31:2590" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="38:1151" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="248:389" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="482:623" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="710:851" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="956:1074" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="1158:2582" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="1221:1394" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="1419:1591" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="1441:1584" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="1470:1573" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="1615:1931" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="1637:1924" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="1666:1780" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="1809:1913" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="1955:2265" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="1977:2258" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="2006:2112" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="2141:2247" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="2289:2572" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="2311:2565" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="2340:2445" ph="..." />
-            <marker date="1522957641775" expanded="true" signature="2474:2554" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -422,7 +392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="569">
           <caret line="120" column="65" lean-forward="false" selection-start-line="120" selection-start-column="65" selection-end-line="120" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -430,23 +399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-53">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lookupCustomerForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lookupVehicleForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="103" column="7" lean-forward="false" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -454,7 +406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-53">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -462,7 +413,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="117" column="42" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -470,7 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-53">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -478,26 +427,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="66" column="19" lean-forward="false" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
-          <folding>
-            <element signature="e#1634#1641#1" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#9;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#10;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purchaseForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="63" column="23" lean-forward="false" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/saleCustomerSearch.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
+        <state relative-caret-position="375">
           <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
           <folding />
         </state>
@@ -505,7 +440,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/saleNewCustomer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -513,7 +448,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/salesForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
+        <state relative-caret-position="315">
           <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding />
         </state>
@@ -521,7 +456,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/saleVehicleSearch.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
+        <state relative-caret-position="390">
           <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
           <folding />
         </state>
@@ -529,7 +464,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/searchCustomer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
+        <state relative-caret-position="1230">
           <caret line="82" column="23" lean-forward="false" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
           <folding />
         </state>
@@ -537,7 +472,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/searchDB.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -545,16 +480,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/searchVehicle.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
+        <state relative-caret-position="1185">
           <caret line="79" column="23" lean-forward="false" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/validCustomer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -563,6 +490,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validCustomer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="2" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lookupCustomerForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchaseForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="63" column="23" lean-forward="false" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lookupVehicleForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="103" column="7" lean-forward="false" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
           <folding />
         </state>
       </provider>

@@ -135,9 +135,11 @@
 		case "invoice":
 			$date_purchased = $_POST['date_purchased'];
 			$cost_of_vehicle = $_POST['cost_of_vehicle'];
-			$cost_of_warranty = $_POST['cost_of_warranty'];
+			// $cost_of_warranty = $_POST['cost_of_warranty'];
 			$down_payment = $_POST['down_payment'];
-			$
+
+			// echo $cost_of_vehicle;
+			echo $date_purchased;
 			
 			$sql = "INSERT INTO invoice (date_purchased) VALUES (\"$date_purchased\")";
 			$result = mysqli_query($link, $sql);
