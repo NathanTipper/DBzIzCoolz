@@ -396,4 +396,26 @@
 			<location>Lethbridge, Alberta</location>
 		</Purchase>
 	</Purchases>
+	<Damages>
+		<Damage>
+			<est_cost>890</est_cost>
+			<description>Locks need to be rewired</description>
+		</Damage>
+		<Damage>
+			<est_cost>3120</est_cost>
+			<description>Timing chain needs to be replaced</description>
+		</Damage>
+		<Damage>
+			<est_cost>1100</est_cost>
+			<description>Couple of dings need to be fixed up</description>
+		</Damage>
+		<Damage>
+			<est_cost>800</est_cost>
+			<description>Headlights need replacing</description>
+		</Damage>
+		<Damage>
+			<est_cost>1800</est_cost>
+			<description>Needs a new battery</description>
+		</Damage>
+	</Damages>
 </FakeData>

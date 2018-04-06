@@ -71,14 +71,14 @@
                 while($row = mysqli_fetch_array($searchQuery)) {
                     echo "<div class=\"row\">";
                     echo "<div class=\"col-sm-2\"><b>VIN: </b>".$row[0]."</div>";
-                    echo "<div class=\"col-sm-2\"><b>Make: </b>".$row[1]."</div>";
-                    echo "<div class=\"col-sm-2\"><b>Model: </b>".$row[2]."</div>";
-                    echo "<div class=\"col-sm-2\"><b>Trim: </b>".$row[3]."</div>";
-                    echo "<div class=\"col-sm-2\"><b>Year: </b>".$row[4]."</div>";
-                    echo "<div class=\"col-sm-2\"><b>Colour: </b>".$row[5]."</div>";
+                    echo "<div class=\"col-sm-2\"><b>Make: </b>".$row[3]."</div>";
+                    echo "<div class=\"col-sm-2\"><b>Model: </b>".$row[4]."</div>";
+                    echo "<div class=\"col-sm-2\"><b>Trim: </b>".$row[5]."</div>";
+                    echo "<div class=\"col-sm-2\"><b>Year: </b>".$row[6]."</div>";
+                    echo "<div class=\"col-sm-2\"><b>Colour: </b>".$row[7]."</div>";
                     echo "</div>";
                     echo "<hr>";        
-                    }
+                }
             ?>
         </div>
     </div>

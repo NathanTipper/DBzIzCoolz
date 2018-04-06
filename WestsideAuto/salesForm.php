@@ -50,19 +50,25 @@
             <div class="row">
                 <div class="col-sm">
                     <label for="date">Date</label>
-                    <input type="date" class="form-control" id="date" name="date_purchased" placeholder="YYYY/DD/MM">
+                    <input type="date" class="form-control" id="date" name="date_purchased" placeholder="YYYY-DD-MM">
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <label for="warranty">Warranty</label>
-                    <select id="warranty" name="warranty" class="form-control">
-                        <option selected>No</option>
+                    <label for="has_warranty">Warranty?</label>
+                    <select id="has_warranty" name="has_warranty" class="form-control" onchange="toggleWarrantyInput(this.value)">
+                        <option selected >No</option>
                         <option>Yes</option>
                     </select>
                 </div>
+				<div class="col-sm" id="warranty_names" style="display: none">
+					<label for="warranty_name">Warranty Name</label>
+					<input type="checkbox" name="warranty_name[]" value="WestSide Auto Exterior">WestSide Auto Exterior   </input>
+					<input type="checkbox" name="warranty_name[]" value="Gold Package">Gold Package    </input>
+					<input type="checkbox" name="warranty_name[]" value="Vehicle Theft">Vehicle Theft   </input>
+				</div>
             </div>
         </div>
         <div class="container">
@@ -75,7 +81,7 @@
                 <div class="col-sm">
                     <label for="downPayment">Down Payment</label>
                     <input type="number" step="100" data-number-to-fixed="2" data-number-stepfactor="100"
-                           name="down_payment" class="form-control" id="downPayment" placeholder="$">
+                           class="form-control" name="down_payment" id="downPayment" placeholder="$">
                 </div>
                 <div class="col-sm">
                     <label for="financeAmount">Finance Amount</label>

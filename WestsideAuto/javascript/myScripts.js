@@ -52,6 +52,18 @@ function checkVIN(x) {
     }
 }
 
-function backBtn() {
+function backBtn(x) {
     history.go(-1);
+}
+
+function toggleWarrantyInput(x) {
+	var select = document.getElementById('warranty_names');
+	alert(x);
+	if(x == "Yes") {
+		select.style.display = "block";
+	}
+	
+	else {
+		select.style.display = "none";
+	}
 }

@@ -3,6 +3,18 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', 'on');
 	$xml = simplexml_load_file("fakeData.xml") or die("Error: Cannot open file");
+	
+	foreach($xml->Damages->children() as $damage) {
+		$dmg_name = $damage->dmg_name;
+		$est_cost = $damage->est_cost;
+		
+		$sql = "INSERT INTO (dmg_name, est_cost)";
+		$result = mysqli_query($link, $sql);
+		if(!$result) {
+			break;
+		}
+	}
+	
 	foreach($xml->Customers->children() as $customer) {
 		$drivers_license_no = $customer->drivers_license_no;
 		$TaxID = 0;
@@ -71,6 +83,7 @@
 	}
 	
 	$purchase_ID = 1;
+	$damages_ID = 1;
 	foreach($xml->Vehicles->children() as $vehicle) {
 		$VIN = $vehicle->VIN;
 		$price = $vehicle->price;
@@ -90,6 +103,49 @@
 		if(!$result) {
 			echo "<script>alert('$sql')</script>";
 			break;
+		}
+		
+		if($purchase_ID == 1) {
+			$sql = "INSERT INTO r_vehicledamages (VIN, dmg_id) VALUES (\"$VIN\", $damages_ID)";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('$sql')</script>";
+				exit();
+			}
+			
+			++$damages_ID;
+			$sql = "INSERT INTO r_vehicledamages (VIN, dmg_id) VALUES (\"$VIN\", $damages_ID)";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('$sql')</script>";
+				exit();
+			}
+			
+			++$damages_ID;
+			$sql = "INSERT INTO r_vehicledamages (VIN, dmg_id) VALUES (\"$VIN\", $damages_ID)";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('$sql')</script>";
+				exit();
+			}
+			++$damages_ID;
+		}
+		
+		elseif($purchase_ID == 2) {
+			$sql = "INSERT INTO r_vehicledamages (VIN, dmg_id) VALUES (\"$VIN\", $damages_ID)";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('$sql')</script>";
+				exit();
+			}
+			
+			++$damages_ID;
+			$sql = "INSERT INTO r_vehicledamages (VIN, dmg_id) VALUES (\"$VIN\", $damages_ID)";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('$sql')</script>";
+				exit();
+			}
 		}
 		
 		$sql = "INSERT INTO r_purchasedrelationship (purchase_ID, VIN) VALUES ($purchase_ID, \"$VIN\")";
