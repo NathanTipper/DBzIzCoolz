@@ -1,7 +1,7 @@
 <?php
 	include 'connectDB.php';	
-	error_reporting(E_ALL);
-	ini_set('display_errors', 'on');
+//	error_reporting(E_ALL);
+//	ini_set('display_errors', 'on');
 	$sql = "SELECT * FROM customer";
 	$result = mysqli_query($link, $sql);
 	

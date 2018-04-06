@@ -111,7 +111,8 @@ if($searchType == 'sold') {
                     echo "<div class=\"col-sm-2\"><b>KM's: </b>".$row[9]."</div>";
                     echo "<div class=\"col-sm-2\"><b>Style: </b>".$row[10]."</div>";
                     echo "<div class=\"col-sm-2\"><b>Interior: </b>".$row[11]."</div>";
-                    echo "<div class=\"col-sm-2\"><b>VIN: </b>".$row[0]."</div>";
+                    echo "<div class=\"col-sm-2\"><b>Price: $</b>".$row[1]."</div>";
+                    echo "<div class=\"col-sm-4\"><b>VIN: </b>".$row[0]."</div>";
                     echo "</div>";
                     echo "<hr>";        
                     }
