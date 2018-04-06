@@ -1,3 +1,4 @@
+<?php include 'insertFakeData.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="style/myStyle.css">
 </head>
 <body>
-<?php include 'insertFakeData.php'; ?>
 <div class="jumbotron">
     <h1 class="display-4">Westside Autos</h1>
     <p class="lead">Welcome to your all-in-one solution for purchasing and sales.</p>

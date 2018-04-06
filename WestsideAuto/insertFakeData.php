@@ -5,7 +5,7 @@
 	$sql = "SELECT * FROM customer";
 	$result = mysqli_query($link, $sql);
 	
-	if(mysqli_num_rows($result)) {
+	if(!mysqli_num_rows($result)) {
 	
 		$xml = simplexml_load_file("fakeData.xml") or die("Error: Cannot open file");
 		
@@ -16,6 +16,7 @@
 			$sql = "INSERT INTO damage (est_cost, description) VALUES ($est_cost, \"$description\")";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
+				echo "<script>alert('$sql')</script>";
 				break;
 			}
 		}
@@ -87,6 +88,20 @@
 			}
 		}
 		
+		foreach($xml->Warranties->children() as $warranty) {
+			$warranty_name = $warranty->warranty_name;
+			$length = $warranty->length;
+			$cost = $warranty->cost;
+			$deductible = $warranty->deductible;
+			
+			$sql = "INSERT INTO warranty (warranty_name, length, cost, deductible) VALUES (\"$warranty_name\", $length, $cost, $deductible)";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('$sql')</script>";
+				break;
+			}
+		}
+		
 		$purchase_ID = 1;
 		$damages_ID = 1;
 		foreach($xml->Vehicles->children() as $vehicle) {
@@ -146,6 +161,47 @@
 				
 				++$damages_ID;
 				$sql = "INSERT INTO r_vehicledamage (VIN, dmg_id) VALUES (\"$VIN\", $damages_ID)";
+				$result = mysqli_query($link, $sql);
+				if(!$result) {
+					echo "<script>alert('$sql')</script>";
+					exit();
+				}
+			}
+			
+			elseif($purchase_ID == 3) {
+				$sql = "INSERT INTO r_vehicleunderwarranty (warranty_name, VIN, start_date) VALUES (\"WestSide Auto Exterior\", \"$VIN\", \"2018-04-01\")";
+				$result = mysqli_query($link, $sql);
+				if(!$result) {
+					echo "<script>alert('$sql')</script>";
+					exit();
+				}
+			}
+			
+			elseif($purchase_ID == 4) {
+				$sql = "INSERT INTO r_vehicleunderwarranty (warranty_name, VIN, start_date) VALUES (\"Gold Package\", \"$VIN\", \"2018-03-25\")";
+				$result = mysqli_query($link, $sql);
+				if(!$result) {
+					echo "<script>alert('$sql   $VIN')</script>";
+					exit();
+				}
+				
+				$sql = "INSERT INTO r_vehicleunderwarranty (warranty_name, VIN, start_date) VALUES (\"Vehicle Theft\", \"$VIN\", \"2018-03-25\")";
+				$result = mysqli_query($link, $sql);
+				if(!$result) {
+					echo "<script>alert('$sql   $VIN')</script>";
+					exit();
+				}
+			}
+			
+			elseif($purchase_ID == 5) {
+				$sql = "INSERT INTO r_vehicleunderwarranty (warranty_name, VIN, start_date) VALUES (\"WestSide Auto Exterior\", \"$VIN\", \"2018-04-02\")";
+				$result = mysqli_query($link, $sql);
+				if(!$result) {
+					echo "<script>alert('$sql')</script>";
+					exit();
+				}
+				
+				$sql = "INSERT INTO r_vehicleunderwarranty (warranty_name, VIN, start_date) VALUES (\"Vehicle Theft\", \"$VIN\", \"2018-04-02\")";
 				$result = mysqli_query($link, $sql);
 				if(!$result) {
 					echo "<script>alert('$sql')</script>";

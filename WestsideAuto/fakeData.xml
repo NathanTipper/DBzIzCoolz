@@ -330,67 +330,67 @@
 	</Vehicles>
 	<Purchases>
 		<Purchase>
-			<date_of_purchase>04-04-2018</date_of_purchase>
+			<date_of_purchase>2018-04-04</date_of_purchase>
 			<seller>Bridge City</seller>
 			<isAuction>0</isAuction>
 			<location>Lethbridge, Alberta</location>
 		</Purchase>
 		<Purchase>
-			<date_of_purchase>02-01-2018</date_of_purchase>
+			<date_of_purchase>2018-01-27</date_of_purchase>
 			<seller>Balog Auction</seller>
 			<isAuction>1</isAuction>
 			<location>Lethbridge, Alberta</location>
 		</Purchase>
 		<Purchase>
-			<date_of_purchase>02-10-2018</date_of_purchase>
+			<date_of_purchase>2018-02-10</date_of_purchase>
 			<seller>Ford</seller>
 			<isAuction>0</isAuction>
 			<location>Edmonton, Alberta</location>
 		</Purchase>
 			<Purchase>
-			<date_of_purchase>02-06-2018</date_of_purchase>
+			<date_of_purchase>2018-02-06</date_of_purchase>
 			<seller>Ford</seller>
 			<isAuction>0</isAuction>
 			<location>Edmonton, Alberta</location>
 		</Purchase>
 		<Purchase>
-			<date_of_purchase>03-26-2018</date_of_purchase>
+			<date_of_purchase>2018-03-28</date_of_purchase>
 			<seller>Bridge City</seller>
 			<isAuction>0</isAuction>
 			<location>Lethbridge, Alberta</location>
 		</Purchase>
 		<Purchase>
-			<date_of_purchase>12-28-2017</date_of_purchase>
+			<date_of_purchase>2017-12-28</date_of_purchase>
 			<seller>Harry Lenz Auction</seller>
 			<isAuction>1</isAuction>
 			<location>Lethbridge, Alberta</location>
 		</Purchase>
 		<Purchase>
-			<date_of_purchase>03-28-2018</date_of_purchase>
+			<date_of_purchase>2018-03-28</date_of_purchase>
 			<seller>Bridge City</seller>
 			<isAuction>0</isAuction>
 			<location>Lethbridge, Alberta</location>
 		</Purchase>
 		<Purchase>
-			<date_of_purchase>03-22-2018</date_of_purchase>
+			<date_of_purchase>2018-03-22</date_of_purchase>
 			<seller>Honda</seller>
 			<isAuction>0</isAuction>
 			<location>Calgary, Alberta</location>
 		</Purchase>
 		<Purchase>
-			<date_of_purchase>01-05-2018</date_of_purchase>
+			<date_of_purchase>2018-01-05</date_of_purchase>
 			<seller>Harry Lenz</seller>
 			<isAuction>1</isAuction>
 			<location>Lethbridge, Alberta</location>
 		</Purchase>
 		<Purchase>
-			<date_of_purchase>02-19-2018</date_of_purchase>
+			<date_of_purchase>2018-01-22</date_of_purchase>
 			<seller>Balog</seller>
 			<isAuction>1</isAuction>
 			<location>Lethbridge, Alberta</location>
 		</Purchase>
 		<Purchase>
-			<date_of_purchase>11-30-2017</date_of_purchase>
+			<date_of_purchase>2017-11-30</date_of_purchase>
 			<seller>Harry Lenz</seller>
 			<isAuction>1</isAuction>
 			<location>Lethbridge, Alberta</location>
@@ -418,4 +418,24 @@
 			<description>Needs a new battery</description>
 		</Damage>
 	</Damages>
+	<Warranties>
+		<Warranty>
+			<warranty_name>WestSide Auto Exterior</warranty_name>
+			<length>12</length>
+			<cost>1200</cost>
+			<deductible>120</deductible>
+		</Warranty>
+		<Warranty>
+			<warranty_name>Gold Package</warranty_name>
+			<length>24</length>
+			<cost>1500</cost>
+			<deductible>140</deductible>
+		</Warranty>
+		<Warranty>
+			<warranty_name>Vehicle Theft</warranty_name>
+			<length>36</length>
+			<cost>3000</cost>
+			<deductible>500</deductible>
+		</Warranty>
+	</Warranties>
 </FakeData>
