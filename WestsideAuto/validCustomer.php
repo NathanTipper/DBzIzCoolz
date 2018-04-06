@@ -5,7 +5,7 @@
     ini_set('display_errors', 'on');
 	include 'connectDB.php';
 	$customerDLN = $_POST['customerDLN'];
-	$sql = "SELECT drivers_license_no, first_name, last_name FROM customer WHERE drivers_license_no = $customerDLN";
+	$sql = "SELECT drivers_license_no, first_name, last_name FROM customer WHERE drivers_license_no = \"$customerDLN\"";
 	
 	$result = mysqli_query($link, $sql);
 	$rows = mysqli_num_rows($result);

@@ -1,4 +1,7 @@
-<?php include 'insertFakeData.php'; ?>
+<?php 
+	include 'insertFakeData.php';
+	include 'init.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

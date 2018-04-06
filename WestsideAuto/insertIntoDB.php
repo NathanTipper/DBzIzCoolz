@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	ini_set('display_errors', 'on');
 	error_reporting(E_ALL);
+	ini_set('display_errors', 'on');
 	include 'connectDB.php';
 	
 	
@@ -20,14 +20,14 @@
 			$seller = $_POST['seller'];
 			$isAuction = $_POST['isAuction'];
 			$location = $_POST['location'];
-
-			$
 			
-			if($isAuction == 'Yes')
+			if($isAuction == 'Yes') {
 				$isAuction = 1;
-			else
+			}
+			else {
 				$isAuction = 0;
-
+			}
+				
 			$VIN = $_POST['VIN'];
 			$make = $_POST['make'];
 			$model = $_POST['model'];
@@ -80,10 +80,10 @@
 			$result = mysqli_query($link, $sql);
 
 			if($result) {
-			    echo "<script>alert('Employee added!');</script>";
+			    echo "<script>alert('Employee added!')</script>";
 			}
 			else {
-			    echo "<script>alert('Error');</script>";
+			    echo "<script>alert('$sql')</script>";
 			}
 			break;
 
@@ -126,32 +126,49 @@
 
 		case "warranty":
 			$warranty_name = $_POST['warranty_name'];
-			$cost_per_month = $_POST['cost_per_month'];
+			$length = $_POST['length'];
+			$cost = $_POST['cost'];
 			$deductible = $_POST['deductible'];
 
-			$sql = "INSERT INTO warranty (warranty_name, cost_per_month, deductible) VALUES (\"$warranty_name\", $cost_per_month, $deductible)";
+			$sql = "INSERT INTO warranty (warranty_name, length, cost, deductible) VALUES (\"$warranty_name\", $length, $cost, $deductible)";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('Failure: $sql')</script>";
+			}
+			
+			else {
+				echo "<script>alert('Success')</script>";
+			}
 			break;
 
 		case "invoice":
 			$date_purchased = $_POST['date_purchased'];
-			$cost_of_vehicle = $_POST['cost_of_vehicle'];
-			$cost_of_warranty = $_POST['cost_of_warranty'];
+			$cost_of_vehicle = $_SESSION['price'];
+			$has_warranty = $_POST['has_warranty'];
 			$down_payment = $_POST['down_payment'];
+			
+			if($has_warranty == "Yes") {
+				$warranties = $_POST['warranty_name'];
+				$n = count($warranties);
+				
+				//$sql = "SELECT cost FROM warranty WHERE warranty_name = $warranties[
+			}
 			
 			$price_sold = $cost_of_vehicle + $cost_of_warranty;
 			
 			$sql = "INSERT INTO invoice (date_purchased, price_sold, down_payment) VALUES (\"$date_purchased\", $price_sold, $down_payment)";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
-				echo "<script>alert('Failure: Could not add to invoice')</script>";
+				echo "<script>alert('Failure: $sql')</script>";
 				exit();
 			}
 			
 			$VIN = $_SESSION['VIN'];
+			$invoice_no = $_SESSION['invoice_no'];
 			$sql = "INSERT INTO r_vehiclesold (VIN) VALUES (\"$VIN\")";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
-				echo "<script>alert('Failure: Could not add to r_vehiclesold')</script>";
+				echo "<script>alert('Failure: $sql')</script>";
 				exit();
 			}
 			
@@ -159,15 +176,15 @@
 			$sql = "INSERT INTO r_soldto (drivers_license_no) VALUES (\"$customerDLN\")";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
-				echo "<script>alert('Failure: Could not add to r_soldto')</script>";
+				echo "<script>alert('Failure: $sql')</script>";
 				exit();
 			}
 			
 			$employeeID = $_POST['empid'];
-			$sql = "INSERT INTO r_soldby (empid) VALUES (\"$employeeID\")";
+			$sql = "INSERT INTO r_soldby (empid) VALUES ($employeeID)";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
-				echo "<script>alert('Failure: Could not add to r_soldto')</script>";
+				echo "<script>alert('Failure: $sql')</script>";
 				exit();
 			}
 

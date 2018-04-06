@@ -5,7 +5,7 @@
     ini_set('display_errors', 'on');
 	include 'connectDB.php';
 	$vin = $_POST['VIN'];
-	$sql = "SELECT VIN, make, model, year FROM Vehicle WHERE VIN = $vin";
+	$sql = "SELECT VIN, make, model, year, price FROM Vehicle WHERE VIN = \"$vin\"";
 	
 	$result = mysqli_query($link, $sql);
 	$rows = mysqli_num_rows($result);
@@ -15,6 +15,7 @@
 		$_SESSION["make"] = $row[1];
 		$_SESSION["model"] = $row[2];
 		$_SESSION["year"] = $row[3];
+		$_SESSION["price"] = $row[4];
 		echo "<script> window.location.href = 'salesForm.php'</script>";
 	}
 	
