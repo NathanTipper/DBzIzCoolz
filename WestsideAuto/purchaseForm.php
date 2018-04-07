@@ -73,8 +73,8 @@ $damageArray = array(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <label for="date">Date (YYYY-DD-MM)</label>
-                    <input type="date" class="form-control" id="date" name="date_of_purchase" placeholder="YYYY-DD-MM">
+                    <label for="date">Date (YYYY-MM-DD)</label>
+                    <input type="date" class="form-control" id="date" name="date_of_purchase" placeholder="YYYY-MM-DD">
                 </div>
             </div>
         </div>

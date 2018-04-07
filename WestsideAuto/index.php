@@ -62,7 +62,7 @@
             <a href="newEmployeeForm.html" class="btn homeOptions">Add a New Employee</a>
         </div>
         <div class="col-sm">
-            <a href="#" class="btn homeOptions">Lookup Sales</a>
+            <a href="lookupSaleForm.html" class="btn homeOptions">Lookup Sales</a>
         </div>
     </div>
 </div>

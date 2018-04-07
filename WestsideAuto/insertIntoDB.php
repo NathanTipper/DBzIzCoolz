@@ -38,6 +38,8 @@
 			$kilometers = $_POST['kilometers'];
 			$style = $_POST['style'];
 			$interiorColor = $_POST['interior_color'];
+			$book_price = $_POST['book_price'];
+			$car_price = $_POST['price'];
 
 			$sql = "INSERT INTO purchased (purchase_ID, date_of_purchase, seller, isAuction, location) VALUES ($purchase_ID, \"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")";
 			$result = mysqli_query($link, $sql);
@@ -46,7 +48,7 @@
 				exit();
 			}
 
-			$sql = "INSERT INTO vehicle (VIN, make, model, trim, year, color, current_condition, km, style, interior_color) VALUES (\"$VIN\", \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\")";
+			$sql = "INSERT INTO vehicle (VIN, make, model, trim, year, color, current_condition, km, style, interior_color, book_price, price) VALUES (\"$VIN\", \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\", \"$book_price\", \"$car_price\")";
 			$result = mysqli_query($link, $sql);
 
 			if(!$result) {
@@ -99,8 +101,6 @@
 			$customer_gender = $_POST['customer_gender'];
 			$customer_DOB = $_POST['customer_DOB'];
 			$customer_phone_number['phone_no'];
-
-			echo "<script>alert('$customer_DOB')</script>";
 
 			$sql = "INSERT INTO customer (drivers_license_no, TaxID, address, city, province, postal_code, first_name, last_name, gender, DOB, phone_no) VALUES (\"$drivers_license_no\", $tax_id, \"$customer_address\", \"$customer_city\", \"$customer_province\", \"$customer_postal_code\", \"$customer_first_name\", \"$customer_last_name\", \"$customer_gender\",\"$customer_DOB\", \"$phone_number\")";
 
@@ -219,5 +219,5 @@
 
 	mysqli_close($link);
 
-	//echo "<script> window.location.href = 'index.php';</script>";
+	echo "<script> window.location.href = 'index.php';</script>";
 ?>

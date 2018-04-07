@@ -49,8 +49,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <label for="date">Date</label>
-                    <input type="date" class="form-control" id="date" name="date_purchased" placeholder="YYYY-DD-MM">
+                    <label for="date">Date (YYYY-MM-DD)</label>
+                    <input type="date" class="form-control" id="date" name="date_purchased" placeholder="YYYY-MM-DD">
                 </div>
             </div>
         </div>
