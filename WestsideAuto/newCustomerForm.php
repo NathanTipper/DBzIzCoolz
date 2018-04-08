@@ -1,3 +1,6 @@
+<?php session_start(); 
+echo $_SESSION['first_name'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,7 +123,7 @@
                     <div class="col-sm">
                         <label for="dln">Driver's Licence Number</label>
                         <input type="text" class="form-control" name="drivers_license_no" id="dln"
-                               placeholder="Enter driver's licence number">
+                               placeholder="Enter driver's licence number" value="<?php echo $_SESSION['drivers_license_no'] ?>">
                     </div>
                 </div>
             </div>

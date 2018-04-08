@@ -48,6 +48,7 @@
 				exit();
 			}
 
+			$car_price = $car_price * 1.2;
 			$sql = "INSERT INTO vehicle (VIN, make, model, trim, year, color, current_condition, km, style, interior_color, book_price, price) VALUES (\"$VIN\", \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\", \"$book_price\", \"$car_price\")";
 			$result = mysqli_query($link, $sql);
 

@@ -19,7 +19,8 @@
 	
 	else {
 		$_SESSION['inSale'] = 1;
-		echo "<script> window.location.href = 'newCustomerForm.html'</script>";
+		$_SESSION['drivers_license_no'] = $customerDLN;
+		echo "<script> window.location.href = 'newCustomerForm.php'</script>";
 	}
 		
 ?>

@@ -1,6 +1,8 @@
 <?php 
 	include 'insertFakeData.php';
 	include 'init.php';
+    session_start();
+    session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="en">
