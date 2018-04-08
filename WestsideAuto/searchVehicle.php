@@ -5,6 +5,7 @@ $make = $_POST['make'];
 $model = $_POST['model'];
 $year = $_POST['year'];
 $searchType = $_POST['searchType'];
+$withWarranty = $_POST['withWarranty'];
 $isEmpty = True;
 
 $sql = "SELECT * FROM vehicle";
@@ -40,19 +41,22 @@ if($year != '') {
 }
 if($searchType == 'lot') {
     if($isEmpty) {
-    $sql = $sql.' WHERE VIN not in (SELECT VIN FROM r_vehicleSold);';
+    $sql = $sql.' WHERE VIN not in (SELECT VIN FROM r_vehicleSold)';
     }
     else {
-    $sql = $sql.' and VIN not in (SELECT VIN FROM r_vehicleSold);';
+    $sql = $sql.' and VIN not in (SELECT VIN FROM r_vehicleSold)';
     }
 }
 
 if($searchType == 'sold') {
     if($isEmpty) {
-    $sql = $sql.' WHERE VIN in (SELECT VIN FROM r_vehicleSold);';
+    $sql = $sql.' WHERE VIN in (SELECT VIN FROM r_vehicleSold)';
     }
     else {
-    $sql = $sql.' and VIN in (SELECT VIN FROM r_vehicleSold);';
+    $sql = $sql.' and VIN in (SELECT VIN FROM r_vehicleSold)';
+    }
+    if($withWarranty) {
+        $sql = $sql.' and VIN in (SELECT VIN FROM r_vehicleunderwarranty)';
     }
 }
 ?>

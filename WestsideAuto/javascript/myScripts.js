@@ -62,8 +62,13 @@ function toggleWarrantyInput(x) {
 	if(x == "Yes") {
 		select.style.display = "block";
 	}
-	
+
 	else {
 		select.style.display = "none";
 	}
 }
+
+$("#downPayment").change( function () {
+    $('#financeAmount').val(($('#totalDue').val() - $(this).val()) * 1.05);
+    // $('#financeAmount').val('/personal-trainer-directory/'+$(this).val().toLowerCase().replace(/ +/g, '-').trim());
+});
