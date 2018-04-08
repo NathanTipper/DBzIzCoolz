@@ -41,7 +41,7 @@
 			$book_price = $_POST['book_price'];
 			$car_price = $_POST['price'];
 
-			$sql = "INSERT INTO purchased (purchase_ID, date_of_purchase, seller, isAuction, location) VALUES ($purchase_ID, \"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")";
+			$sql = "INSERT INTO purchased (date_of_purchase, seller, isAuction, location) VALUES (\"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
 				echo "Failure";
@@ -57,7 +57,7 @@
 				exit();
 			}
 
-			$sql = "INSERT INTO r_purchasedrelationship (purchase_ID, VIN) VALUES (\"$purchase_ID\", $VIN)";
+			$sql = "INSERT INTO r_purchasedrelationship (VIN) VALUES ($VIN)";
 			$result = mysqli_query($link, $sql);
 
 			if(!$result) {

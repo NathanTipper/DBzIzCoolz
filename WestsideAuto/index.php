@@ -51,7 +51,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <a href="newCustomerForm.html" class="btn homeOptions">Add a New Customer </a>
+            <a href="newCustomerForm.php" class="btn homeOptions">Add a New Customer </a>
         </div>
         <div class="col-sm">
             <a href="lookupCustomerForm.html" class="btn homeOptions">Lookup Customers</a>
