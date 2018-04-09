@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 09, 2018 at 12:56 AM
+-- Generation Time: Apr 09, 2018 at 04:50 AM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.7
 
@@ -42,6 +42,21 @@ CREATE TABLE `customer` (
   `phone_no` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`drivers_license_no`, `TaxID`, `address`, `city`, `province`, `postal_code`, `first_name`, `last_name`, `gender`, `DOB`, `phone_no`) VALUES
+('155285-281', 0, '106 Purdue Ct. W', 'Lethbridge', 'AB', 'T1K4R8', 'Nathan', 'Tipper', 'Male', '1991-07-22', '403-360-6998'),
+('198762-755', 0, '122 Red Crow Blvd.', 'Lethbridge', 'AB', 'T1K7J8', 'Jim', 'Pitt', 'Male', '1976-02-13', '403-795-9901'),
+('225612-762', 0, '441 Cowichan Crt. W', 'Lethbridge', 'AB', 'T5S3Y3', 'Katelyn', 'Duke', 'Female', '1996-01-29', '403-393-4558'),
+('245671-234', 0, '136 6th St S', 'Lethbridge', 'AB', 'T437Y5', 'Adam', 'Varbark', 'Male', '1984-11-09', '403-795-6948'),
+('279081-013', 0, '101 Stardew Rd.', 'Calgary', 'AB', 'C5S3X0', 'Shane', 'Tippitappi', 'Male', '1987-04-21', '403-393-8792'),
+('345219-213', 0, '598 Canyon Blvd. W', 'Lethbridge', 'AB', 'T1K9P2', 'Carley', 'Herbert', 'Female', '1992-05-09', '403-393-4451'),
+('762182-629', 0, '287 5th St N', 'Lethbridge', 'AB', 'T1KH5J', 'Jessica', 'Jones', 'Female', '1984-08-01', '403-360-1369'),
+('819221-190', 0, '323 14th St S', 'Lethbridge', 'AB', 'T1KJ7T', 'Francis', 'Duke', 'Male', '1891-03-03', '403-795-5661'),
+('965231-901', 0, '119 Jerry Potts Blvd.', 'Lethbridge', 'AB', 'T1K6R3', 'Deborah', 'Smith', 'Female', '1996-09-18', '403-360-2443');
+
 -- --------------------------------------------------------
 
 --
@@ -54,6 +69,17 @@ CREATE TABLE `damage` (
   `est_cost` int(11) NOT NULL,
   `actual_cost` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `damage`
+--
+
+INSERT INTO `damage` (`dmg_id`, `description`, `est_cost`, `actual_cost`) VALUES
+(1, 'Locks need to be rewired', 890, NULL),
+(2, 'Timing chain needs to be replaced', 3120, NULL),
+(3, 'Couple of dings need to be fixed up', 1100, NULL),
+(4, 'Headlights need replacing', 800, NULL),
+(5, 'Needs a new battery', 1800, NULL);
 
 -- --------------------------------------------------------
 
@@ -72,6 +98,18 @@ CREATE TABLE `employee` (
   `province` varchar(25) NOT NULL,
   `address` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`empid`, `dept`, `first_name`, `last_name`, `phone_no`, `city`, `postal_code`, `province`, `address`) VALUES
+(1, 'Sales', 'Jerry', 'Seinfeld', '4037957123', 'Lethbridge', 'T7N9J2', 'AB', '1001 Uplands Blvd. N'),
+(2, 'Mechanic', 'Maria', 'Suarez', '4033600914', 'Lethbridge', 'T2N2V7', 'AB', '421 15th St N'),
+(3, 'Sales', 'Rachel', 'Greene', '4033732291', 'Lethbridge', 'T1J2J3', 'AB', '92 Chilcotin Rd. W'),
+(4, 'Sales', 'Chandler', 'Bing', '4037955556', 'Lethbridge', 'T6S2Y1', 'AB', '42 16th St. W'),
+(5, 'Sales', 'Melissa', 'Kingley', '4033607781', 'Lethbridge', 'T1J3K2', 'AB', '102 Rutgers Rd. W'),
+(6, 'Sales', 'Matt', 'Damon', '4037951452', 'Lethbridge', 'T5V4V2', 'AB', '324 Mt. Blakiston Rd. W');
 
 -- --------------------------------------------------------
 
@@ -115,6 +153,23 @@ CREATE TABLE `purchased` (
   `location` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `purchased`
+--
+
+INSERT INTO `purchased` (`purchase_ID`, `date_of_purchase`, `seller`, `isAuction`, `location`) VALUES
+(1, '2018-04-04', 'Bridge City', 0, 'Lethbridge, Alberta'),
+(2, '2018-01-27', 'Balog Auction', 1, 'Lethbridge, Alberta'),
+(3, '2018-02-10', 'Ford', 0, 'Edmonton, Alberta'),
+(4, '2018-02-06', 'Ford', 0, 'Edmonton, Alberta'),
+(5, '2018-03-28', 'Bridge City', 0, 'Lethbridge, Alberta'),
+(6, '2017-12-28', 'Harry Lenz Auction', 1, 'Lethbridge, Alberta'),
+(7, '2018-03-28', 'Bridge City', 0, 'Lethbridge, Alberta'),
+(8, '2018-03-22', 'Honda', 0, 'Calgary, Alberta'),
+(9, '2018-01-05', 'Harry Lenz', 1, 'Lethbridge, Alberta'),
+(10, '2018-01-22', 'Balog', 1, 'Lethbridge, Alberta'),
+(11, '2017-11-30', 'Harry Lenz', 1, 'Lethbridge, Alberta');
+
 -- --------------------------------------------------------
 
 --
@@ -136,6 +191,23 @@ CREATE TABLE `r_purchasedrelationship` (
   `purchase_ID` int(11) NOT NULL,
   `VIN` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `r_purchasedrelationship`
+--
+
+INSERT INTO `r_purchasedrelationship` (`purchase_ID`, `VIN`) VALUES
+(1, '233FR398W3RF23145'),
+(7, '245PL2RT765WD9P8I'),
+(2, '2FRJOI1PSF23145PL'),
+(4, '2LAWPSFIBVA72509'),
+(3, '3RFR1AYPSF98145PL'),
+(9, '85FG3W6Y89CA9023B'),
+(8, 'K34R89UA49TPY0M21'),
+(6, 'M12RPL81623P32JU2'),
+(11, 'O9HNM67540JHA23R2'),
+(5, 'P96AP7LYUTA145PL'),
+(10, 'U6TRF897F6YCKA30L');
 
 -- --------------------------------------------------------
 
@@ -170,6 +242,17 @@ CREATE TABLE `r_vehicledamage` (
   `dmg_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `r_vehicledamage`
+--
+
+INSERT INTO `r_vehicledamage` (`VIN`, `dmg_id`) VALUES
+('233FR398W3RF23145', 1),
+('233FR398W3RF23145', 2),
+('233FR398W3RF23145', 3),
+('2FRJOI1PSF23145PL', 4),
+('2FRJOI1PSF23145PL', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -193,6 +276,17 @@ CREATE TABLE `r_vehicleunderwarranty` (
   `start_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `r_vehicleunderwarranty`
+--
+
+INSERT INTO `r_vehicleunderwarranty` (`warranty_name`, `VIN`, `start_date`) VALUES
+('WestSide Auto Exterior', '3RFR1AYPSF98145PL', '2018-04-01'),
+('Gold Package', '2LAWPSFIBVA72509', '2018-03-25'),
+('Vehicle Theft', '2LAWPSFIBVA72509', '2018-03-25'),
+('WestSide Auto Exterior', 'P96AP7LYUTA145PL', '2018-04-02'),
+('Vehicle Theft', 'P96AP7LYUTA145PL', '2018-04-02');
+
 -- --------------------------------------------------------
 
 --
@@ -214,6 +308,23 @@ CREATE TABLE `vehicle` (
   `interior_color` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `vehicle`
+--
+
+INSERT INTO `vehicle` (`VIN`, `price`, `book_price`, `make`, `model`, `trim`, `year`, `color`, `current_condition`, `km`, `style`, `interior_color`) VALUES
+('233FR398W3RF23145', 10500, 9000, 'Dodge', 'Dart', 'None', 2012, 'Black', 'Good', 100234, 'Sedan', 'Black'),
+('245PL2RT765WD9P8I', 5250, 2900, 'Dodge', 'Dakota', 'None', 2009, 'Black', 'Great', 110012, 'Truck', 'Grey'),
+('2FRJOI1PSF23145PL', 5000, 2750, 'Volkswagon', 'Jetta', 'None', 2002, 'Grey', 'Poor', 120912, 'Sedan', 'Grey'),
+('2LAWPSFIBVA72509', 6900, 3600, 'Ford', 'Focus', 'None', 2010, 'Blue', 'Great', 131910, 'Sedan', 'Grey'),
+('3RFR1AYPSF98145PL', 14400, 10900, 'Ford', 'Mustang', 'None', 2014, 'Red', 'Excellent', 80781, 'Other', 'Black'),
+('85FG3W6Y89CA9023B', 9800, 5400, 'Hyundai', 'Elantra', 'None', 2012, 'Red', 'Great', 100912, 'Sedan', 'Black'),
+('K34R89UA49TPY0M21', 8350, 6100, 'Honda', 'Accord', 'None', 2005, 'Blue', 'Good', 178190, 'Sedan', 'Grey'),
+('M12RPL81623P32JU2', 8900, 5100, 'Toyota', 'Camry', 'None', 2010, 'Red', 'Poor', 270982, 'Sedan', 'Black'),
+('O9HNM67540JHA23R2', 9500, 4950, 'Chrysler', '200', 'None', 2010, 'Grey', 'Good', 180657, 'Sedan', 'Black'),
+('P96AP7LYUTA145PL', 12900, 7800, 'Dodge', 'Challenger', 'None', 2009, 'Orange', 'Excellent', 80623, 'Other', 'Black'),
+('U6TRF897F6YCKA30L', 8100, 3100, 'Jeep', 'Wrangler', 'None', 2016, 'Blue', 'Excellent', 60981, 'Offroad', 'Grey');
+
 -- --------------------------------------------------------
 
 --
@@ -226,6 +337,15 @@ CREATE TABLE `warranty` (
   `cost` double NOT NULL,
   `deductible` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `warranty`
+--
+
+INSERT INTO `warranty` (`warranty_name`, `length`, `cost`, `deductible`) VALUES
+('Gold Package', 24, 1500, 140),
+('Vehicle Theft', 36, 3000, 500),
+('WestSide Auto Exterior', 12, 1200, 120);
 
 --
 -- Indexes for dumped tables
@@ -363,6 +483,11 @@ ALTER TABLE `purchased`
 ALTER TABLE `r_customerpayments`
   MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `r_purchasedrelationship`
+--
+ALTER TABLE `r_purchasedrelationship`
+  MODIFY `purchase_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
 -- AUTO_INCREMENT for table `r_soldby`
 --
 ALTER TABLE `r_soldby`
@@ -393,7 +518,7 @@ ALTER TABLE `r_customerpayments`
 --
 ALTER TABLE `r_purchasedrelationship`
   ADD CONSTRAINT `VIN_constraint` FOREIGN KEY (`VIN`) REFERENCES `vehicle` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `purchase_id_const` FOREIGN KEY (`purchase_ID`) REFERENCES `purchased` (`purchase_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `r_purchase_id_constraint` FOREIGN KEY (`purchase_ID`) REFERENCES `purchased` (`purchase_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `r_soldby`
