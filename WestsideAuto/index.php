@@ -1,4 +1,8 @@
-<?php include 'insertFakeData.php'; ?>
+<?php 
+	include 'insertFakeData.php';
+    session_start();
+    session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +50,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <a href="newCustomerForm.html" class="btn homeOptions">Add a New Customer </a>
+            <a href="newCustomerForm.php" class="btn homeOptions">Add a New Customer </a>
         </div>
         <div class="col-sm">
             <a href="lookupCustomerForm.html" class="btn homeOptions">Lookup Customers</a>
@@ -59,11 +63,9 @@
             <a href="newEmployeeForm.html" class="btn homeOptions">Add a New Employee</a>
         </div>
         <div class="col-sm">
-            <a href="#" class="btn homeOptions">Lookup Sales</a>
+            <a href="lookupSaleForm.html" class="btn homeOptions">Lookup Sales</a>
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

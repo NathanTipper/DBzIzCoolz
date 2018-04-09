@@ -1,3 +1,6 @@
+<?php session_start(); 
+echo $_SESSION['first_name'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,17 +46,17 @@
                         <input type="text" class="form-control" name="customer_first_name" id="customerFirstName"
                                placeholder="Enter first name">
                     </div>
-                    <!--<div class="col-sm">-->
-                        <!--<label for="customerPhone">Phone</label>-->
-                        <!--<input type="text" class="form-control" id="customerPhone"-->
-                               <!--placeholder="Enter phone number">-->
-                    <!--</div>-->
+                    <div class="col-sm">
+                        <label for="customerPhone">Phone</label>
+                        <input type="text" class="form-control" id="customerPhone"
+                               name="phone_no" placeholder="Enter phone number">
+                    </div>
                 </div>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
-                        <label for="DOB">Date of Birth (YYYY-DD-MM)</label>
+                        <label for="DOB">Date of Birth (YYYY-MM-DD)</label>
                         <input type="date" class="form-control" name="customer_DOB" id="DOB"
                                placeholder="YYYY-MM-DD">
                     </div>
@@ -120,7 +123,7 @@
                     <div class="col-sm">
                         <label for="dln">Driver's Licence Number</label>
                         <input type="text" class="form-control" name="drivers_license_no" id="dln"
-                               placeholder="Enter driver's licence number">
+                               placeholder="Enter driver's licence number" value="<?php echo $_SESSION['drivers_license_no'] ?>">
                     </div>
                 </div>
             </div>

@@ -54,10 +54,7 @@ if($searchType == 'withPurchase') {
     else {
     $sql = $sql.' and drivers_license_no in (SELECT drivers_license_no FROM r_soldTo);';
     }
-
-    // $carSoldSql = 'SELECT make, model, year, invoice_no FROM vehicle, invoice WHERE '
 }
-// echo $sql;
 ?>
 
 <!DOCTYPE html>
@@ -105,7 +102,7 @@ if($searchType == 'withPurchase') {
                     echo "<div class=\"row\">";
                     echo "<div class=\"col-sm-4\"><b>First Name: </b>".$row[6]."</div>";
                     echo "<div class=\"col-sm-4\"><b>Last Name: </b>".$row[7]."</div>";
-                    echo "<div class=\"col-sm-4\"><b>Gender: </b>".$row[9]."</div>";
+                    echo "<div class=\"col-sm-4\"><b>Gender: </b>".$row[8]."</div>";
                     echo "</div>";
                     echo "<div class=\"row\">";
                     echo "<div class=\"col-sm-4\"><b>Address: </b>".$row[2]."</div>";
@@ -114,13 +111,10 @@ if($searchType == 'withPurchase') {
                     echo "</div>";
                     echo "<div class=\"row\">";
                     echo "<div class=\"col-sm-4\"><b>Postal Code: </b>".$row[5]."</div>";
-                    echo "<div class=\"col-sm-4\"><b>Date of Birth: </b>".$row[10]."</div>";
+                    echo "<div class=\"col-sm-4\"><b>Date of Birth: </b>".$row[9]."</div>";
                     echo "<div class=\"col-sm-4\"><b>Drivers license Number: </b>".$row[0]."</div>";
                     echo "</div>";
                     echo "<div class=\"row\">";
-                    if($searchType == 'withPurchase') {
-                    echo "<div class=\"col-sm-4\"><b># of Late Payments: </b>".$row[8]."</div>";
-                    }
                     echo "<div class=\"col-sm-4\"><b>Tax ID: </b>".$row[1]."</div>";
                     echo "</div>";
                     echo "<hr>";        

@@ -52,6 +52,21 @@ function checkVIN(x) {
     }
 }
 
-function backBtn() {
+function backBtn(x) {
     history.go(-1);
 }
+
+function toggleWarrantyInput(x) {
+	var select = document.getElementById('warranty_names');
+	if(x == "Yes") {
+		select.style.display = "block";
+	}
+
+	else {
+		select.style.display = "none";
+	}
+}
+
+$("#downPayment").change( function () {
+    $('#financeAmount').val(($('#totalDue').val() - $(this).val()) * 1.05);
+});

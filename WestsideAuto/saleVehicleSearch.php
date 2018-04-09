@@ -22,7 +22,6 @@
     include 'connectDB.php';
     $sql = "SELECT * FROM vehicle WHERE vin NOT IN (SELECT vin FROM r_vehicleSold)";
 ?>
-
 <div class="jumbotron">
     <a href="index.php"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">
@@ -70,15 +69,18 @@
                 $numCol = mysqli_num_fields($searchQuery);
                 while($row = mysqli_fetch_array($searchQuery)) {
                     echo "<div class=\"row\">";
-                    echo "<div class=\"col-sm-2\"><b>VIN: </b>".$row[0]."</div>";
-                    echo "<div class=\"col-sm-2\"><b>Make: </b>".$row[1]."</div>";
-                    echo "<div class=\"col-sm-2\"><b>Model: </b>".$row[2]."</div>";
-                    echo "<div class=\"col-sm-2\"><b>Trim: </b>".$row[3]."</div>";
-                    echo "<div class=\"col-sm-2\"><b>Year: </b>".$row[4]."</div>";
-                    echo "<div class=\"col-sm-2\"><b>Colour: </b>".$row[5]."</div>";
+                    echo "<div class=\"col-sm-3\"><b>Price: $</b>".$row[1]."</div>";
+                    echo "<div class=\"col-sm-3\"><b>VIN: </b>".$row[0]."</div>";
+                    echo "<div class=\"col-sm-3\"><b>Make: </b>".$row[3]."</div>";
+                    echo "<div class=\"col-sm-3\"><b>Model: </b>".$row[4]."</div>";
+                    echo "<div class=\"row\">";
+                    echo "</div>";
+                    echo "<div class=\"col-sm-3\"><b>Trim: </b>".$row[5]."</div>";
+                    echo "<div class=\"col-sm-3\"><b>Year: </b>".$row[6]."</div>";
+                    echo "<div class=\"col-sm-3\"><b>Colour: </b>".$row[7]."</div>";
                     echo "</div>";
                     echo "<hr>";        
-                    }
+                }
             ?>
         </div>
     </div>

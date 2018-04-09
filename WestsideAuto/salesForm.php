@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    $downPayment = '';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,36 +52,68 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <label for="date">Date</label>
-                    <input type="date" class="form-control" id="date" name="date_purchased" placeholder="YYYY/DD/MM">
+                    <label for="date">Date (YYYY-MM-DD)</label>
+                    <input type="date" class="form-control" id="date" name="date_purchased" placeholder="YYYY-MM-DD">
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <label for="warranty">Warranty</label>
-                    <select id="warranty" name="warranty" class="form-control">
-                        <option selected>No</option>
+                    <label for="has_warranty">Warranty?</label>
+                    <select id="has_warranty" name="has_warranty" class="form-control" onchange="toggleWarrantyInput(this.value)">
+                        <option selected >No</option>
                         <option>Yes</option>
                     </select>
                 </div>
             </div>
         </div>
+    <div class="warranties" id="warranty_names" style="display: none">
+        <div class="container" >
+            <div class="row">
+                <div class="col-sm">
+                    <label>Warranty Name</label>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="warranty_name[]" id="Exterior" value="WestSide Auto Exterior">
+                        <label class="form-check-label" for="Exterior">WestSide Auto Exterior</label>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="warranty_name[]" id="Gold" value="Gold Package">
+                        <label class="form-check-label" for="Gold">Gold Package</label>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="warranty_name[]" id="Theft" value="Vehicle Theft">
+                        <label class="form-check-label" for="Theft">Vehicle Theft</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <label for="totalDue">Total Due</label>
+                    <label for="totalDue">Cost of Vehicle</label>
                     <input type="number" step="100" data-number-to-fixed="2" data-number-stepfactor="100"
-                           class="form-control" id="totalDue" placeholder="$">
+                           name="cost_of_vehicle" class="form-control" id="totalDue" placeholder="$" value="<?php echo $_SESSION['price']?>"
+                           disabled>
                 </div>
                 <div class="col-sm">
                     <label for="downPayment">Down Payment</label>
                     <input type="number" step="100" data-number-to-fixed="2" data-number-stepfactor="100"
-                           class="form-control" id="downPayment" placeholder="$">
+                           class="form-control" name="down_payment" id="downPayment" placeholder="$" value="<?php echo $downPayment?>">
                 </div>
                 <div class="col-sm">
-                    <label for="financeAmount">Finance Amount</label>
+                    <label for="financeAmount">Finance Amount (5%)</label>
                     <input type="number" step="100" data-number-to-fixed="2" data-number-stepfactor="100"
                            class="form-control" id="financeAmount" placeholder="$">
                 </div>
@@ -94,7 +129,7 @@
                 <div class="col-sm">
                     <label for="commission">Sale commission</label>
                     <input type="number" step="100" data-number-to-fixed="2" data-number-stepfactor="100"
-                           class="form-control" id="commission" placeholder="$">
+                           class="form-control" id="commission" placeholder="$" value="<?php echo $_SESSION['price'] * .015 ?>" disabled>
                 </div>
             </div>
         </div>
@@ -110,6 +145,5 @@
     </form>
 </div>
 <script src="javascript/myScripts.js"></script>
-
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	ini_set('display_errors', 'on');
 	error_reporting(E_ALL);
+	ini_set('display_errors', 'on');
 	include 'connectDB.php';
 	
 	
@@ -20,14 +20,14 @@
 			$seller = $_POST['seller'];
 			$isAuction = $_POST['isAuction'];
 			$location = $_POST['location'];
-
-			$
 			
-			if($isAuction == 'Yes')
+			if($isAuction == 'Yes') {
 				$isAuction = 1;
-			else
+			}
+			else {
 				$isAuction = 0;
-
+			}
+				
 			$VIN = $_POST['VIN'];
 			$make = $_POST['make'];
 			$model = $_POST['model'];
@@ -38,27 +38,30 @@
 			$kilometers = $_POST['kilometers'];
 			$style = $_POST['style'];
 			$interiorColor = $_POST['interior_color'];
+			$book_price = $_POST['book_price'];
+			$car_price = $_POST['price'];
 
-			$sql = "INSERT INTO purchased (purchase_ID, date_of_purchase, seller, isAuction, location) VALUES ($purchase_ID, \"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")";
+			$sql = "INSERT INTO purchased (date_of_purchase, seller, isAuction, location) VALUES (\"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
-				echo "Failure";
+				echo "<script>alert('$sql')</script>";
 				exit();
 			}
 
-			$sql = "INSERT INTO vehicle (VIN, make, model, trim, year, color, current_condition, km, style, interior_color) VALUES (\"$VIN\", \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\")";
+			$car_price = $car_price * 1.2;
+			$sql = "INSERT INTO vehicle (VIN, make, model, trim, year, color, current_condition, km, style, interior_color, book_price, price) VALUES (\"$VIN\", \"$make\", \"$model\", \"$trim\", $year, \"$color\", \"$current_condition\", $kilometers, \"$style\", \"$interiorColor\", \"$book_price\", \"$car_price\")";
 			$result = mysqli_query($link, $sql);
 
 			if(!$result) {
-				echo "Failure";
+				echo "<script>alert('$sql')</script>";
 				exit();
 			}
 
-			$sql = "INSERT INTO r_purchasedrelationship (purchase_ID, VIN) VALUES (\"$purchase_ID\", $VIN)";
+			$sql = "INSERT INTO r_purchasedrelationship (VIN) VALUES (\"$VIN\")";
 			$result = mysqli_query($link, $sql);
 
 			if(!$result) {
-				echo "Failure";
+				echo "<script>alert('$sql')</script>";
 				exit();
 			}
 
@@ -66,7 +69,6 @@
 
 
 		case "employee":
-			$empid = $_POST['empid'];
 			$employee_first_name = $_POST['employee_first_name'];
 			$employee_last_name = $_POST['employee_last_name'];
 			$department = $_POST['department'];
@@ -76,14 +78,14 @@
 			$postal_code = $_POST['employee_postal_code'];
 			$province = $_POST['province'];
 
-			$sql = "INSERT INTO employee (empid, dept, first_name, last_name, phone_no, address, city, postal_code, province) VALUES (\"$empid\", \"$department\", \"$employee_first_name\", \"$employee_last_name\", \"$phone_number\", \"$address\", \"$city\", \"$postal_code\", \"province\")";
+			$sql = "INSERT INTO employee (dept, first_name, last_name, phone_no, address, city, postal_code, province) VALUES (\"$department\", \"$employee_first_name\", \"$employee_last_name\", \"$phone_number\", \"$address\", \"$city\", \"$postal_code\", \"province\")";
 			$result = mysqli_query($link, $sql);
 
 			if($result) {
-			    echo "<script>alert('Employee added!');</script>";
+			    echo "<script>alert('Employee added!')</script>";
 			}
 			else {
-			    echo "<script>alert('Error');</script>";
+			    echo "<script>alert('$sql')</script>";
 			}
 			break;
 
@@ -93,14 +95,14 @@
 			$customer_last_name = $_POST['customer_last_name'];
 			$customer_address = $_POST['customer_address'];
 			$customer_province = $_POST['customer_province'];
-			$no_of_late_payments = 0;
 			$customer_city = $_POST['customer_city'];
 			$customer_postal_code = $_POST['customer_postal_code'];
 			$tax_id = $_POST['customer_tax_id'];
 			$customer_gender = $_POST['customer_gender'];
 			$customer_DOB = $_POST['customer_DOB'];
+			$customer_phone_number['phone_no'];
 
-			$sql = "INSERT INTO customer (drivers_license_no, TaxID, address, city, province, postal_code, first_name, last_name, no_of_late_payments, gender, DOB) VALUES (\"$drivers_license_no\", $tax_id, \"$customer_address\", \"$customer_city\", \"$customer_province\", \"$customer_postal_code\", \"$customer_first_name\", \"$customer_last_name\", $no_of_late_payments, \"$customer_gender\",\"$customer_DOB\")";
+			$sql = "INSERT INTO customer (drivers_license_no, TaxID, address, city, province, postal_code, first_name, last_name, gender, DOB, phone_no) VALUES (\"$drivers_license_no\", $tax_id, \"$customer_address\", \"$customer_city\", \"$customer_province\", \"$customer_postal_code\", \"$customer_first_name\", \"$customer_last_name\", \"$customer_gender\",\"$customer_DOB\", \"$phone_number\")";
 
 			$result = mysqli_query($link, $sql);
 			if($result) {
@@ -126,32 +128,67 @@
 
 		case "warranty":
 			$warranty_name = $_POST['warranty_name'];
-			$cost_per_month = $_POST['cost_per_month'];
+			$length = $_POST['length'];
+			$cost = $_POST['cost'];
 			$deductible = $_POST['deductible'];
 
-			$sql = "INSERT INTO warranty (warranty_name, cost_per_month, deductible) VALUES (\"$warranty_name\", $cost_per_month, $deductible)";
+			$sql = "INSERT INTO warranty (warranty_name, length, cost, deductible) VALUES (\"$warranty_name\", $length, $cost, $deductible)";
+			$result = mysqli_query($link, $sql);
+			if(!$result) {
+				echo "<script>alert('Failure: $sql')</script>";
+			}
+			
+			else {
+				echo "<script>alert('Success')</script>";
+			}
 			break;
 
 		case "invoice":
 			$date_purchased = $_POST['date_purchased'];
-			$cost_of_vehicle = $_POST['cost_of_vehicle'];
-			$cost_of_warranty = $_POST['cost_of_warranty'];
+			$cost_of_vehicle = $_SESSION['price'];
+			$has_warranty = $_POST['has_warranty'];
 			$down_payment = $_POST['down_payment'];
 			
-			$price_sold = $cost_of_vehicle + $cost_of_warranty;
+			$VIN = $_SESSION['VIN'];
+			$date = date('Y-m-d');
+			$price_sold = 0;
+			if($has_warranty == "Yes") {
+				$warranties = $_POST['warranty_name'];
+				$n = count($warranties);
+				
+				for($i = 0; $i < $n; $i++) {
+					$sql = "SELECT cost FROM warranty WHERE warranty_name = \"$warranties[$i]\"";
+					$result = mysqli_query($link, $sql);
+					if(mysqli_num_rows($result) > 0)  {
+						$row = mysqli_fetch_array($result);
+						$price_sold += $row[0];
+					}
+					
+					else {
+						echo "<script>alert('Failure: $sql ')</script>"; 
+					}
+					
+					$sql = "INSERT INTO r_vehicleunderwarranty (warranty_name, VIN, start_date) VALUES (\"$warranties[$i]\", \"$VIN\", \"$date_purchased\")";
+					$result = mysqli_query($link, $sql);
+					if(!$result) {
+						echo "<script>alert('Failure: $sql ')</script>"; 
+					}
+				}
+			}
+			
+			$price_sold += $cost_of_vehicle;
 			
 			$sql = "INSERT INTO invoice (date_purchased, price_sold, down_payment) VALUES (\"$date_purchased\", $price_sold, $down_payment)";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
-				echo "<script>alert('Failure: Could not add to invoice')</script>";
+				echo "<script>alert('Failure: $sql')</script>";
 				exit();
 			}
 			
-			$VIN = $_SESSION['VIN'];
 			$sql = "INSERT INTO r_vehiclesold (VIN) VALUES (\"$VIN\")";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
-				echo "<script>alert('Failure: Could not add to r_vehiclesold')</script>";
+				echo "<script>alert('Failure: $sql')</script>";
 				exit();
 			}
 			
@@ -159,15 +196,15 @@
 			$sql = "INSERT INTO r_soldto (drivers_license_no) VALUES (\"$customerDLN\")";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
-				echo "<script>alert('Failure: Could not add to r_soldto')</script>";
+				echo "<script>alert('Failure: $sql')</script>";
 				exit();
 			}
 			
 			$employeeID = $_POST['empid'];
-			$sql = "INSERT INTO r_soldby (empid) VALUES (\"$employeeID\")";
+			$sql = "INSERT INTO r_soldby (empid) VALUES ($employeeID)";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
-				echo "<script>alert('Failure: Could not add to r_soldto')</script>";
+				echo "<script>alert('Failure: $sql')</script>";
 				exit();
 			}
 

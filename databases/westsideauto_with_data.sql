@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 06, 2018 at 07:22 AM
+-- Generation Time: Apr 09, 2018 at 04:50 AM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.7
 
@@ -405,15 +405,15 @@ ALTER TABLE `r_purchasedrelationship`
 -- Indexes for table `r_soldby`
 --
 ALTER TABLE `r_soldby`
-  ADD UNIQUE KEY `empid` (`empid`),
-  ADD UNIQUE KEY `invoice_no` (`invoice_no`);
+  ADD UNIQUE KEY `invoice_no` (`invoice_no`),
+  ADD KEY `empid` (`empid`) USING BTREE;
 
 --
 -- Indexes for table `r_soldto`
 --
 ALTER TABLE `r_soldto`
-  ADD UNIQUE KEY `drivers_license_no` (`drivers_license_no`),
-  ADD UNIQUE KEY `invoice_no` (`invoice_no`);
+  ADD UNIQUE KEY `invoice_no` (`invoice_no`),
+  ADD KEY `drivers_license_no` (`drivers_license_no`) USING BTREE;
 
 --
 -- Indexes for table `r_vehicledamage`
@@ -427,7 +427,7 @@ ALTER TABLE `r_vehicledamage`
 --
 ALTER TABLE `r_vehiclesold`
   ADD UNIQUE KEY `invoice_no` (`invoice_no`),
-  ADD KEY `VIN_const_2` (`VIN`);
+  ADD UNIQUE KEY `VIN_const_2` (`VIN`) USING BTREE;
 
 --
 -- Indexes for table `r_vehicleunderwarranty`
@@ -466,7 +466,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `payments`
 --
@@ -483,20 +483,25 @@ ALTER TABLE `purchased`
 ALTER TABLE `r_customerpayments`
   MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `r_purchasedrelationship`
+--
+ALTER TABLE `r_purchasedrelationship`
+  MODIFY `purchase_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
 -- AUTO_INCREMENT for table `r_soldby`
 --
 ALTER TABLE `r_soldby`
-  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `r_soldto`
 --
 ALTER TABLE `r_soldto`
-  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `r_vehiclesold`
 --
 ALTER TABLE `r_vehiclesold`
-  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
@@ -513,7 +518,7 @@ ALTER TABLE `r_customerpayments`
 --
 ALTER TABLE `r_purchasedrelationship`
   ADD CONSTRAINT `VIN_constraint` FOREIGN KEY (`VIN`) REFERENCES `vehicle` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `purchase_id_const` FOREIGN KEY (`purchase_ID`) REFERENCES `purchased` (`purchase_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `r_purchase_id_constraint` FOREIGN KEY (`purchase_ID`) REFERENCES `purchased` (`purchase_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `r_soldby`
@@ -527,7 +532,7 @@ ALTER TABLE `r_soldby`
 --
 ALTER TABLE `r_soldto`
   ADD CONSTRAINT `drivers_license_no_constraint` FOREIGN KEY (`drivers_license_no`) REFERENCES `customer` (`drivers_license_no`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `invoice_const` FOREIGN KEY (`invoice_no`) REFERENCES `invoice` (`invoice_no`);
+  ADD CONSTRAINT `invoice_const` FOREIGN KEY (`invoice_no`) REFERENCES `invoice` (`invoice_no`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `r_vehicledamage`
@@ -541,7 +546,7 @@ ALTER TABLE `r_vehicledamage`
 --
 ALTER TABLE `r_vehiclesold`
   ADD CONSTRAINT `VIN_const_2` FOREIGN KEY (`VIN`) REFERENCES `vehicle` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `invoice_no_constr` FOREIGN KEY (`invoice_no`) REFERENCES `invoice` (`invoice_no`);
+  ADD CONSTRAINT `invoice_no_constr` FOREIGN KEY (`invoice_no`) REFERENCES `invoice` (`invoice_no`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `r_vehicleunderwarranty`
