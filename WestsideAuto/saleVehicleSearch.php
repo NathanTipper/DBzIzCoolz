@@ -22,7 +22,6 @@
     include 'connectDB.php';
     $sql = "SELECT * FROM vehicle WHERE vin NOT IN (SELECT vin FROM r_vehicleSold)";
 ?>
-
 <div class="jumbotron">
     <a href="index.php"><h1 class="display-4">Westside Autos</h1></a>
     <hr class="my-4">

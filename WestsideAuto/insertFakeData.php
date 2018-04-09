@@ -1,7 +1,5 @@
 <?php
-	include 'connectDB.php';	
-//	error_reporting(E_ALL);
-//	ini_set('display_errors', 'on');
+	include 'connectDB.php';
 	$sql = "SELECT * FROM customer";
 	$result = mysqli_query($link, $sql);
 	
@@ -54,12 +52,6 @@
 			$province = $employee->province;
 			$address = $employee->address;
 			
-			// $sql = "SELECT * FROM employee";
-			// $result = mysqli_query($link, $sql);
-			// if(mysqli_num_rows($result)) {
-				// break;
-			// }
-			
 			$sql = "INSERT INTO employee (dept, first_name, last_name, phone_no, city, postal_code, province, address) VALUES (\"$dept\", \"$first_name\", \"$last_name\", $phone_no, \"$city\", \"$postal_code\", \"$province\", \"$address\")";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
@@ -73,12 +65,6 @@
 			$seller = $purchase->seller;
 			$isAuction = $purchase->isAuction;
 			$location = $purchase->location;
-			
-			// $sql = "SELECT * FROM purchased";
-			// $result = mysqli_query($link, $sql);
-			// if(mysqli_num_rows($result)) {
-				// break;
-			// }
 			
 			$sql = "INSERT INTO purchased (date_of_purchase, seller, isAuction, location) VALUES (\"$date_of_purchase\", \"$seller\", $isAuction, \"$location\")";
 			$result = mysqli_query($link, $sql);

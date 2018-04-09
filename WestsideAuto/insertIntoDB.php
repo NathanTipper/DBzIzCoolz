@@ -69,7 +69,6 @@
 
 
 		case "employee":
-			// $empid = $_POST['empid'];
 			$employee_first_name = $_POST['employee_first_name'];
 			$employee_last_name = $_POST['employee_last_name'];
 			$department = $_POST['department'];
@@ -151,7 +150,6 @@
 			$down_payment = $_POST['down_payment'];
 			
 			$VIN = $_SESSION['VIN'];
-			//$invoice_no = $_SESSION['invoice_no'];
 			$date = date('Y-m-d');
 			$price_sold = 0;
 			if($has_warranty == "Yes") {

@@ -54,10 +54,7 @@ if($searchType == 'withPurchase') {
     else {
     $sql = $sql.' and drivers_license_no in (SELECT drivers_license_no FROM r_soldTo);';
     }
-
-    // $carSoldSql = 'SELECT make, model, year, invoice_no FROM vehicle, invoice WHERE '
 }
-// echo $sql;
 ?>
 
 <!DOCTYPE html>

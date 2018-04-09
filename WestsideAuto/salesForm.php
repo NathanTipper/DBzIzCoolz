@@ -1,7 +1,6 @@
 <?php 
     session_start(); 
     $downPayment = '';
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -69,7 +68,7 @@
                 </div>
             </div>
         </div>
-<div class="warranties" id="warranty_names" style="display: none">
+    <div class="warranties" id="warranty_names" style="display: none">
         <div class="container" >
             <div class="row">
                 <div class="col-sm">
@@ -100,7 +99,6 @@
             </div>
         </div>
     </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-sm">
