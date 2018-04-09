@@ -58,7 +58,6 @@ function backBtn(x) {
 
 function toggleWarrantyInput(x) {
 	var select = document.getElementById('warranty_names');
-	alert(x);
 	if(x == "Yes") {
 		select.style.display = "block";
 	}
