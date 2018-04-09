@@ -44,7 +44,7 @@
 			$sql = "INSERT INTO purchased (date_of_purchase, seller, isAuction, location) VALUES (\"$dateOfPurchase\", \"$seller\", $isAuction, \"$location\")";
 			$result = mysqli_query($link, $sql);
 			if(!$result) {
-				echo "Failure";
+				echo "<script>alert('$sql')</script>";
 				exit();
 			}
 
@@ -53,15 +53,15 @@
 			$result = mysqli_query($link, $sql);
 
 			if(!$result) {
-				echo "Failure";
+				echo "<script>alert('$sql')</script>";
 				exit();
 			}
 
-			$sql = "INSERT INTO r_purchasedrelationship (VIN) VALUES ($VIN)";
+			$sql = "INSERT INTO r_purchasedrelationship (VIN) VALUES (\"$VIN\")";
 			$result = mysqli_query($link, $sql);
 
 			if(!$result) {
-				echo "Failure";
+				echo "<script>alert('$sql')</script>";
 				exit();
 			}
 
