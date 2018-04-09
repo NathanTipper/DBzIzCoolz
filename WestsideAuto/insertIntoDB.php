@@ -69,7 +69,7 @@
 
 
 		case "employee":
-			$empid = $_POST['empid'];
+			// $empid = $_POST['empid'];
 			$employee_first_name = $_POST['employee_first_name'];
 			$employee_last_name = $_POST['employee_last_name'];
 			$department = $_POST['department'];
@@ -79,7 +79,7 @@
 			$postal_code = $_POST['employee_postal_code'];
 			$province = $_POST['province'];
 
-			$sql = "INSERT INTO employee (empid, dept, first_name, last_name, phone_no, address, city, postal_code, province) VALUES (\"$empid\", \"$department\", \"$employee_first_name\", \"$employee_last_name\", \"$phone_number\", \"$address\", \"$city\", \"$postal_code\", \"province\")";
+			$sql = "INSERT INTO employee (dept, first_name, last_name, phone_no, address, city, postal_code, province) VALUES (\"$department\", \"$employee_first_name\", \"$employee_last_name\", \"$phone_number\", \"$address\", \"$city\", \"$postal_code\", \"province\")";
 			$result = mysqli_query($link, $sql);
 
 			if($result) {

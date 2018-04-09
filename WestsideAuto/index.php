@@ -1,6 +1,5 @@
 <?php 
 	include 'insertFakeData.php';
-	include 'init.php';
     session_start();
     session_destroy();
 ?>
@@ -68,7 +67,5 @@
         </div>
     </div>
 </div>
-
-
 </body>
 </html>
